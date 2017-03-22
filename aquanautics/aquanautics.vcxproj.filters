@@ -43,7 +43,9 @@
     <ClInclude Include="Input.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceMgr.h" />
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -71,6 +73,8 @@
     <ClCompile Include="Input.cpp">
       <Filter>FrameWork\Node2</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceMgr.cpp" />
+    <ClCompile Include="ResourceMgr.cpp">
+      <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

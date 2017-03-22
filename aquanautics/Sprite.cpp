@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include"Object.h"
 #include "Sprite.h"
-
+#include"Texture.h"
+#include"ResourceMgr.h"
+#include"Renderer.h"
 
 Sprite::Sprite()
 {
@@ -10,4 +12,54 @@ Sprite::Sprite()
 
 Sprite::~Sprite()
 {
+}
+
+bool Sprite::Initialize(std::wstring fileName)
+{
+	if FAILED(D3DXCreateSprite(Renderer::GetInstance()->Device, &D3DSprite))
+		return false;
+
+	Texture = ResourceMgr::GetInstance()->CreateTextureFromFile(fileName);
+
+	if (Texture == nullptr)
+	{
+		assert(!"Texture 생성 실패");
+		return false;
+	}
+
+	return true;
+}
+
+void Sprite::Release()
+{
+	SAFE_RELEASE(D3DSprite);
+
+	if (Texture)
+	{
+		Texture->Release();
+		delete Texture;
+
+		Texture = nullptr;
+	}
+}
+
+void Sprite::Update(float deltaTime)
+{
+	Object::Update(deltaTime);
+}
+
+void Sprite::Render()
+{
+	Object::Render();
+
+	RECT srcRect;
+	SetRect(&srcRect, 0, 0, static_cast<int>(Texture->Size.x), static_cast<int>(Texture->Size.x));
+
+	D3DXVECTOR3 center(Texture->Size.x / 2, Texture->Size.y / 2, 0.f);
+
+	D3DSprite->Begin(D3DXSPRITE_ALPHABLEND);
+	D3DSprite->SetTransform(&Matrix);
+	D3DSprite->Draw(Texture->D3DTexture, &srcRect, NULL, NULL, D3DCOLOR_ARGB(255, 255, 255, 255));
+	D3DSprite->End();
+	
 }

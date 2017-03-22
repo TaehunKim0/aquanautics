@@ -1,7 +1,7 @@
 #pragma once
 class Renderer : public SingleTon<Renderer>
 {
-private:
+public:
 	LPDIRECT3D9 Direct3D;
 	LPDIRECT3DDEVICE9 Device;
 

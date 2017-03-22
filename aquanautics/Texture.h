@@ -1,7 +1,7 @@
 #pragma once
 class Texture
 {
-private:
+public:
 	LPDIRECT3DTEXTURE9 D3DTexture;
 	std::wstring FileName;
 	D3DXVECTOR2 Size;

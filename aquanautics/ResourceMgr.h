@@ -1,5 +1,5 @@
 #pragma once
-class ResourceMgr
+class ResourceMgr : public SingleTon<ResourceMgr>
 {
 private:
 	std::unordered_map<std::wstring, Texture*> textureMap;

@@ -5,7 +5,7 @@ class Sprite : public Object
 private:
 public:
 	LPD3DXSPRITE D3DSprite;
-
+	Texture* Texture;
 
 public:
 	Sprite();
@@ -15,7 +15,7 @@ public:
 
 	void Release();
 
-	virtual void Update();
+	virtual void Update(float deltaTime);
 
 	virtual void Render();
 
