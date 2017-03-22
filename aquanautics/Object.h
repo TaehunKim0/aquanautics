@@ -13,7 +13,6 @@ public:
 	D3DXMATRIX Matrix;
 
 public:
-	Object();
 	Object(std::string name = "");
 	~Object();
 

@@ -19,11 +19,13 @@
     <ClInclude Include="Object.h">
       <Filter>FrameWork\Node</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Object.cpp">
       <Filter>FrameWork\Node</Filter>
     </ClCompile>
+    <ClCompile Include="Scene.cpp" />
   </ItemGroup>
 </Project>
