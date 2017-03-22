@@ -32,4 +32,7 @@
 
 #include"Object.h"
 #include"Scene.h"
-
+#include"Sprite.h"
+#include"PlayerMgr.h"
+#include"Player.h"
+#include"Input.h"

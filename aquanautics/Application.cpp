@@ -50,7 +50,7 @@ void Application::Run()
 		else
 		{
 			Renderer::GetInstance()->Begin();
-			Director::GetInstance()->Update(16.0f);
+			Director::GetInstance()->Update(16.f);
 			Director::GetInstance()->Render();
 			Renderer::GetInstance()->End();
 		}

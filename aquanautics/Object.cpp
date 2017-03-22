@@ -2,7 +2,7 @@
 #include "Object.h"
 
 
-Object::Object(std::string name) : Name(name), Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f)
+Object::Object(std::string name) : Name(name), Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f) ,visible(1)
 {
 	printf("Object %s »ı¼ºµÊ\n", Name.c_str());
 }
@@ -21,7 +21,10 @@ Object::~Object()
 
 bool Object::Initialize()
 {
-	return false;
+	for each(auto child in Children)
+		child->Initialize();
+
+	return true;
 }
 
 void Object::Release()
@@ -35,6 +38,9 @@ void Object::Release()
 
 void Object::Update(float deltaTime)
 {
+	if (!visible)
+		return;
+
 	D3DXMatrixTransformation2D(&Matrix, NULL, 0.0f, NULL, NULL, Rotation, &Position);
 
 	if (Parent)
@@ -47,6 +53,9 @@ void Object::Update(float deltaTime)
 
 void Object::Render()
 {
+	if (!visible)
+		return;
+
 	for each(auto child in Children)
 		child->Render();
 }

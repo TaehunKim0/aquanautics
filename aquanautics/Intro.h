@@ -1,8 +1,9 @@
 #pragma once
-
+class Sprite;
 class Intro : public Scene
 {
 private:	
+	Player* player;
 
 public:
 	Intro();

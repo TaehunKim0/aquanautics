@@ -52,6 +52,12 @@
     <ClInclude Include="Intro.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMgr.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -86,5 +92,11 @@
       <Filter>Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="Player.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMgr.cpp">
+      <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
