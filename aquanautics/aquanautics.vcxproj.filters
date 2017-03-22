@@ -20,6 +20,8 @@
       <Filter>FrameWork\Node</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -27,5 +29,7 @@
       <Filter>FrameWork\Node</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
 </Project>
