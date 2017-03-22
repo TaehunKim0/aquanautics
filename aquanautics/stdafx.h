@@ -3,7 +3,7 @@
 
 #define WIN32_LEAN_AND_MEAN
 
-#define WINDOW_TITLE "aqua"
+#define WINDOW_TITLE L"aqua"
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 720
 

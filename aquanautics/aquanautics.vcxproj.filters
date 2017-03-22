@@ -10,34 +10,55 @@
     <Filter Include="Game">
       <UniqueIdentifier>{fe56aeb2-d0a7-4e00-9bd5-b9432ab0840c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\Node2">
+      <UniqueIdentifier>{e2fbe554-5b4b-4e9a-a2d7-8fb99ccad017}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="SingleTon.h">
-      <Filter>FrameWork</Filter>
-    </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>FrameWork\Node</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="Texture.h" />
     <ClInclude Include="Director.h">
-      <Filter>FrameWork</Filter>
+      <Filter>FrameWork\Node2</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Renderer.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTon.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Object.cpp">
       <Filter>FrameWork\Node</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Director.cpp">
-      <Filter>FrameWork</Filter>
+      <Filter>FrameWork\Node2</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Renderer.cpp">
+      <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp" />
   </ItemGroup>
 </Project>
