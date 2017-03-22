@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="Director.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SingleTon.h" />
     <ClInclude Include="Sprite.h" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="stdafx.cpp">

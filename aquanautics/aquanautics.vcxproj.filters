@@ -25,6 +25,7 @@
     <ClInclude Include="Director.h">
       <Filter>FrameWork</Filter>
     </ClInclude>
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -37,5 +38,6 @@
     <ClCompile Include="Director.cpp">
       <Filter>FrameWork</Filter>
     </ClCompile>
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
 </Project>
