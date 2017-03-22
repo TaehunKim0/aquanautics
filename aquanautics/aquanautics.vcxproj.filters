@@ -85,5 +85,6 @@
     <ClCompile Include="Intro.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
 </Project>

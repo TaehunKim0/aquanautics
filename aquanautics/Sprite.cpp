@@ -1,9 +1,9 @@
 #include "stdafx.h"
-#include"Object.h"
-#include "Sprite.h"
-#include"Texture.h"
-#include"ResourceMgr.h"
 #include"Renderer.h"
+#include"ResourceMgr.h"
+#include"Object.h"
+#include"Texture.h"
+#include"Sprite.h"
 
 Sprite::Sprite()
 {

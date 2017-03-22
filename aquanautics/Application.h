@@ -1,5 +1,5 @@
 #pragma once
-class Application
+class Application : public SingleTon<Application>
 {
 private:
 	HWND handle;

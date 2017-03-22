@@ -1,4 +1,5 @@
 #pragma once
+class Texture;
 class ResourceMgr : public SingleTon<ResourceMgr>
 {
 private:

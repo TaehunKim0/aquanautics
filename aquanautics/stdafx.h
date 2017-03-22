@@ -30,4 +30,6 @@
 
 #include"SingleTon.h"
 
+#include"Object.h"
+#include"Scene.h"
 

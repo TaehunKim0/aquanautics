@@ -5,12 +5,6 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aquanautics", "aquanautics\aquanautics.vcxproj", "{E893BB36-3159-4747-8F8B-8A3972DA04A5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45AD5199-FFA2-4026-9132-04A7FCE5CFCD}"
-	ProjectSection(SolutionItems) = preProject
-		aquanautics\Director.cpp = aquanautics\Director.cpp
-		aquanautics\Director.h = aquanautics\Director.h
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

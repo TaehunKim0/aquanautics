@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Object.h"
+#include"Object.h"
 #include "Scene.h"
 
 Scene::Scene()

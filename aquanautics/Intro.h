@@ -2,13 +2,16 @@
 
 class Intro : public Scene
 {
-private:
-	
+private:	
 
 public:
 	Intro();
 	~Intro();
 
+	bool Initialize();
+	void Release();
 
+	void Update(float deltaTime);
+	void Render();
 };
 

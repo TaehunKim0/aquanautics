@@ -6,5 +6,10 @@ public:
 	Scene();
 	virtual ~Scene();
 
+	void Release() {};
+
+	void Update(float deltaTime) {};
+
+	void Render() {};
 };
 

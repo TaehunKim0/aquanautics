@@ -1,4 +1,5 @@
 #pragma once
+
 class Renderer : public SingleTon<Renderer>
 {
 public:
