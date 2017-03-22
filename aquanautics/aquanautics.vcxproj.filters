@@ -58,6 +58,9 @@
     <ClInclude Include="PlayerMgr.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -97,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="PlayerMgr.cpp">
       <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

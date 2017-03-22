@@ -36,3 +36,4 @@
 #include"PlayerMgr.h"
 #include"Player.h"
 #include"Input.h"
+#include"BackGround.h"

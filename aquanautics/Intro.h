@@ -4,7 +4,7 @@ class Intro : public Scene
 {
 private:	
 	Player* player;
-
+	BackGround* background;
 public:
 	Intro();
 	~Intro();

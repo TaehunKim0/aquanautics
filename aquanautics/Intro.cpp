@@ -13,11 +13,13 @@ Intro::~Intro()
 bool Intro::Initialize()
 {
 	player = PlayerMgr::GetInstance()->GetPlayer();
+	background = new BackGround();
 
+	AddChild(background);
 	AddChild(player);
 
 	Scene::Initialize();
-
+	background->SetBackGround(L"Resources/Map/stage1.png");
 	return true;
 }
 
