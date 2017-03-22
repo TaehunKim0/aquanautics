@@ -1,4 +1,5 @@
 #pragma once
+class Scene;
 class Director : public SingleTon<Director>
 {
 private:
