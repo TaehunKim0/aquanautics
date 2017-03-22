@@ -13,6 +13,9 @@
     <Filter Include="FrameWork\Node2">
       <UniqueIdentifier>{e2fbe554-5b4b-4e9a-a2d7-8fb99ccad017}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{83308c83-21f8-4570-8fd8-01aab66b405e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -46,6 +49,9 @@
     <ClInclude Include="ResourceMgr.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
+    <ClInclude Include="Intro.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -75,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="ResourceMgr.cpp">
       <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
+    <ClCompile Include="Intro.cpp">
+      <Filter>Game\Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -12,6 +12,7 @@ public:
 
 	D3DXMATRIX Matrix;
 
+	bool visible;
 public:
 	Object(std::string name = "");
 	~Object();
@@ -27,5 +28,7 @@ public:
 public:
 	void AddChild(Object* child);
 
+	bool GetVisisble() { return visible; }
+	void SetVisible(bool visible) { this->visible = visible; }
 };
 
