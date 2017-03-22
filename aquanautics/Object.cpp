@@ -2,10 +2,6 @@
 #include "Object.h"
 
 
-Object::Object()
-{
-}
-
 Object::Object(std::string name) : Name(name), Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f)
 {
 	printf("Object %s »ý¼ºµÊ\n", Name.c_str());

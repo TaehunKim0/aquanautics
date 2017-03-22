@@ -28,6 +28,6 @@
 #include<algorithm>
 #include<string>
 
-
+#include"SingleTon.h"
 
 
