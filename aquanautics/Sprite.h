@@ -7,6 +7,7 @@ public:
 	LPD3DXSPRITE D3DSprite;
 	Texture* Texture;
 
+	
 public:
 	Sprite();
 	virtual ~Sprite();

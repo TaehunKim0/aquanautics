@@ -37,3 +37,4 @@
 #include"Player.h"
 #include"Input.h"
 #include"BackGround.h"
+#include"GameTime.h"

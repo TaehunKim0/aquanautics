@@ -61,6 +61,9 @@
     <ClInclude Include="BackGround.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="AnimationSprite.h" />
+    <ClInclude Include="GameTime.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -104,5 +107,8 @@
     <ClCompile Include="BackGround.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="AnimationSprite.cpp" />
+    <ClCompile Include="GameTime.cpp" />
   </ItemGroup>
 </Project>

@@ -18,6 +18,12 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		Application::GetInstance()->Run();
 		Application::GetInstance()->Release();
+
+		GameTime::CurrentFrame++;
+		GameTime::TotalFrame++;
+
+		if (GameTime::CurrentFrame > 60)
+			GameTime::CurrentFrame = 0;
 	}
 
 #if _DEBUG
