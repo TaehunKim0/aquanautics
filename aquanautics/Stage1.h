@@ -6,6 +6,7 @@ private:
 	Player* player;
 	BackGround* background;
 
+
 public:
 	Stage1();
 	~Stage1();

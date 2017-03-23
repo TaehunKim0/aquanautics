@@ -20,6 +20,6 @@ public:
 
 	virtual void Render();
 
-
+	static Sprite* Create(std::wstring filename);
 };
 

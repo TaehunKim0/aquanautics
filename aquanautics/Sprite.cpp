@@ -63,3 +63,10 @@ void Sprite::Render()
 	D3DSprite->End();
 	
 }
+
+Sprite * Sprite::Create(std::wstring filename)
+{
+	auto instance = new Sprite();
+	instance->Initialize(filename);
+	return instance;
+}

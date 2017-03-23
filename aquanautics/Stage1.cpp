@@ -15,14 +15,15 @@ bool Stage1::Initialize()
 {
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new BackGround();
-
-	//AddChild(background);
+	
+	
+	AddChild(background);
 	AddChild(player);
 	AddChild(BulletMgr::GetInstance());
 
 	Scene::Initialize();
 
-	//background->SetBackGround(L"Resources/Map/stage1.png");
+	background->SetBackGround(L"Resources/Map/stage1.png");
 
 	return false;
 }

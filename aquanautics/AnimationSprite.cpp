@@ -28,8 +28,8 @@ void AnimationSprite::NextFrame()
 {
 	currentFrame++;
 
-	if (currentFrame > lastFrame)
-		currentFrame = 0;
+	//if (currentFrame > lastFrame)
+	//	currentFrame = 0;
 }
 
 void AnimationSprite::Update(float deltaTime)
