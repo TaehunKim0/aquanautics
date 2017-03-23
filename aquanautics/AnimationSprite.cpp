@@ -41,3 +41,10 @@ void AnimationSprite::Update(float deltaTime)
 		NextFrame();
 }
 
+void AnimationSprite::Render()
+{
+	auto sprite = spriteList.at(currentFrame);
+
+	sprite->Render();
+}
+

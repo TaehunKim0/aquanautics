@@ -53,6 +53,14 @@ void Application::Run()
 			Director::GetInstance()->Update(16.f);
 			Director::GetInstance()->Render();
 			Renderer::GetInstance()->End();
+
+			GameTime::CurrentFrame++;
+			GameTime::TotalFrame++;
+
+			if (GameTime::CurrentFrame > 60)
+				GameTime::CurrentFrame = 0;
+
+			
 		}
 	}
 

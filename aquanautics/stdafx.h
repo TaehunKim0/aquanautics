@@ -16,6 +16,7 @@
 #define SAFE_DELETE(x) if(x) {delete x; x = nullptr;}
 #define SAFE_RELEASE(x) if(x) {x->Release(); x = nullptr;}
 
+
 #include <Windows.h>
 #include <stdio.h>
 #include <math.h>
@@ -38,3 +39,7 @@
 #include"Input.h"
 #include"BackGround.h"
 #include"GameTime.h"
+#include"AnimationSprite.h"
+#include"Director.h"
+#include"BulletMgr.h"
+#include"Texture.h"

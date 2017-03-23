@@ -16,6 +16,9 @@
     <Filter Include="Game\Scene">
       <UniqueIdentifier>{83308c83-21f8-4570-8fd8-01aab66b405e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Unit">
+      <UniqueIdentifier>{d24c9429-eb20-4ed2-9563-f1d551da70d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -52,18 +55,32 @@
     <ClInclude Include="Intro.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerMgr.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
     <ClInclude Include="BackGround.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenu.h" />
-    <ClInclude Include="AnimationSprite.h" />
-    <ClInclude Include="GameTime.h" />
+    <ClInclude Include="MainMenu.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTime.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationSprite.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMgr.h" />
+    <ClInclude Include="Bullet.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -98,17 +115,31 @@
       <Filter>Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="WinMain.cpp" />
-    <ClCompile Include="Player.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerMgr.cpp">
       <Filter>FrameWork\Node2</Filter>
     </ClCompile>
     <ClCompile Include="BackGround.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="AnimationSprite.cpp" />
-    <ClCompile Include="GameTime.cpp" />
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTime.cpp">
+      <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationSprite.cpp">
+      <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMgr.cpp" />
+    <ClCompile Include="Bullet.cpp" />
   </ItemGroup>
 </Project>

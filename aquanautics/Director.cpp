@@ -29,6 +29,8 @@ void Director::Update(float deltaTime)
 		return;
 
 	CurrentScene->Update(deltaTime);
+
+	
 }
 
 void Director::Render()

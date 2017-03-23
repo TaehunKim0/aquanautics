@@ -1,14 +1,14 @@
 #pragma once
-class Sprite;
-class Intro : public Scene
+class Stage1 : public Scene
 {
-private:	
+private:
 
-
+	Player* player;
+	BackGround* background;
 
 public:
-	Intro();
-	~Intro();
+	Stage1();
+	~Stage1();
 
 	bool Initialize();
 	void Release();
