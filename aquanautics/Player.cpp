@@ -2,7 +2,7 @@
 #include "Player.h"
 #include"Bullet.h"
 
-Player::Player()
+Player::Player() : speed(7.0f)
 {
 }
 
@@ -29,29 +29,26 @@ void Player::Update(float deltaTime)
 	Object::Update(deltaTime);
 
 	if (Input::IsKeyDown(VK_LEFT))
-		Position.x -= 10;
+		Position.x -= speed;
 	
 	if (Input::IsKeyDown(VK_RIGHT))
-		Position.x += 10;
+		Position.x += speed;
 
 	if (Input::IsKeyDown(VK_UP))
-		Position.y -= 10;
+		Position.y -= speed;
 
 	if (Input::IsKeyDown(VK_DOWN))
-		Position.y += 10;
+		Position.y += speed;
 
-	if (Input::IsKeyDown(VK_SPACE) && GameTime::CurrentFrame % 20 == 0)
+	if (Input::IsKeyDown(VK_SPACE) && GameTime::CurrentFrame % 10 == 0)
 	{
 		auto bullet = new Bullet();
-		bullet->Position.x = this->player->Position.x + player->Texture->Size.x / 2;
-		bullet->Position.y = this->player->Position.y + player->Texture->Size.y / 2;
+		bullet->Position.x += (this->Position.x) +(player->Texture->Size.x / 2);
+		bullet->Position.y += (this->Position.y) + (player->Texture->Size.y / 2);
 
 		BulletMgr::GetInstance()->RegisterBullet(bullet);
 		BulletMgr::GetInstance()->Initialize();
 	}
-
-	printf("x : %d", Position.x);
-	printf("y : %d", Position.y);
 }
 
 void Player::Render()

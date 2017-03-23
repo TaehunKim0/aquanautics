@@ -5,7 +5,7 @@ class Player : public Object
 private:
 	Sprite* player;
 	Sprite* p;
-
+	float speed;
 public:
 	Player();
 	~Player();
