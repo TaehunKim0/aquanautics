@@ -2,7 +2,7 @@
 #include "Object.h"
 
 
-Object::Object(std::string name) : Name(name), Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f) ,visible(1)
+Object::Object(std::string name) : Name(name), Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f) ,visible(1) ,id(0)
 {
 	printf("Object %s »ý¼ºµÊ\n", Name.c_str());
 }
@@ -17,6 +17,12 @@ Object::~Object()
 
 	printf("Object %s ¼Ò¸êµÊ\n", Name.c_str());
 
+}
+
+void Object::SetPostion(int x, int y)
+{
+	Position.x = x;
+	Position.y = y;
 }
 
 bool Object::Initialize()
@@ -58,6 +64,10 @@ void Object::Render()
 
 	for each(auto child in Children)
 		child->Render();
+}
+
+void Object::IsCollisionWith(Collision * collision)
+{
 }
 
 void Object::AddChild(Object * child)

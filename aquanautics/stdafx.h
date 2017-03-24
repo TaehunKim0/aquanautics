@@ -29,6 +29,7 @@
 #include<vector>
 #include<algorithm>
 #include<string>
+#include<time.h>
 
 #include"SingleTon.h"
 
@@ -46,3 +47,4 @@
 #include"Texture.h"
 #include"Collision.h"
 #include"CollisionMgr.h"
+#include"EnemySpawner.h"

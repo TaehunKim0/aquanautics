@@ -1,4 +1,5 @@
 #pragma once
+class Collision;
 class Object
 {
 public:
@@ -13,9 +14,13 @@ public:
 	D3DXMATRIX Matrix;
 
 	bool visible;
+
+	int id;
 public:
 	Object(std::string name = "");
 	~Object();
+
+	void SetPostion(int x, int y);
 
 	virtual bool Initialize();
 
@@ -24,6 +29,8 @@ public:
 	virtual void Update(float deltaTime);
 
 	virtual void Render();
+
+	virtual void IsCollisionWith(Collision* collision);
 
 public:
 	void AddChild(Object* child);

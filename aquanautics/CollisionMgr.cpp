@@ -5,6 +5,7 @@
 CollisionMgr::CollisionMgr()
 {
 	collisionList.reserve(10);
+	printf("CollisionMgr »ý¼º \n");
 }
 
 
@@ -26,15 +27,14 @@ void CollisionMgr::Update(float deltaTime)
 		{
 			if (a != b)
 			{
-				auto c =  CircleCollide(a, b);
-				if (c == true)
+				if (CircleCollide(a,b))
 				{
-					a->IsCollideWith(b);
-					b->IsCollideWith(a);
+					a->IsCollide(b);
+					b->IsCollide(a);
 				}
 			}
 		}
-
+	Object::Update(deltaTime);
 }
 
 void CollisionMgr::Render()
@@ -48,16 +48,24 @@ void CollisionMgr::RegisterCollision(Collision * collision)
 
 bool CollisionMgr::CircleCollide(Collision * a, Collision * b)
 {
-	int ax = (a->Position.x + a->Center.x);
-	int bx = (b->Position.x + b->Center.x);
+	float ax = a->Position.x + a->Center.x;
+	float ay = a->Position.y + a->Center.y;
 
-	int ay = (a->Position.y + a->Center.y);
-	int by = (b->Position.y + b->Center.y);
+	float bx = b->Position.x + b->Center.x;
+	float by = b->Position.y +  b->Center.y;
 
-	auto deltaPos = ((ax - bx) * (ax - bx) + (ay - by) * (ay - by));
+	//printf("ax : %f\n", ax);
+	//printf("ay : %f\n", ay);
 
-	if (a->radius + b->radius > deltaPos)
+	//printf("bx : %f\n", bx);
+	//printf("by : %f\n", by);
+
+	float ftemp = sqrt(pow(ax - bx, 2) + pow(ay - by, 2));
+
+	if (ftemp <= (a->radius + b->radius))
 		return true;
+
+	//printf("Ftemp : %f\n", ftemp);
 
 	return false;
 }

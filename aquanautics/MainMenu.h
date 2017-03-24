@@ -9,7 +9,6 @@ private:
 
 	Sprite* howtoplay;
 	
-
 public:
 	MainMenu();
 	~MainMenu();

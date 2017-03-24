@@ -162,6 +162,7 @@
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Director.h" />
+    <ClInclude Include="EnemySpawner.h" />
     <ClInclude Include="GameTime.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Intro.h" />
@@ -177,6 +178,7 @@
     <ClInclude Include="Stage1.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Urak.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddOnPlayer.cpp" />
@@ -188,6 +190,7 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Director.cpp" />
+    <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Intro.cpp" />
@@ -205,6 +208,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Urak.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

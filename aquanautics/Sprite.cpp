@@ -27,6 +27,9 @@ bool Sprite::Initialize(std::wstring fileName)
 		return false;
 	}
 
+	D3DXVECTOR3 center(Texture->Size.x / 2, Texture->Size.y / 2, 0.f);
+	this->Center = center;
+
 	return true;
 }
 
@@ -45,10 +48,7 @@ void Sprite::Render()
 	Object::Render();
 
 	RECT srcRect;
-	SetRect(&srcRect, 0, 0, static_cast<int>(Texture->Size.x), static_cast<int>(Texture->Size.y));
-
-	D3DXVECTOR3 center(Texture->Size.x / 2, Texture->Size.y / 2, 0.f);
-	this->Center = center;
+	SetRect(&srcRect, 0, 0, static_cast<int>(Texture->Size.x), static_cast<int>(Texture->Size.y));	
 
 	D3DSprite->Begin(D3DXSPRITE_ALPHABLEND);
 	D3DSprite->SetTransform(&Matrix);

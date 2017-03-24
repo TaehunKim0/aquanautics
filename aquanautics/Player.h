@@ -6,6 +6,8 @@ private:
 	Sprite* player;
 	Sprite* p;
 	float speed;
+
+	Collision * m_collision;
 public:
 	Player();
 	~Player();
@@ -15,4 +17,6 @@ public:
 	void Render();
 
 	void Attack();
+
+	void IsCollisionWith(Collision* other);
 };

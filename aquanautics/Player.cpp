@@ -4,6 +4,8 @@
 
 Player::Player() : speed(7.0f)
 {
+	id = 12;
+	Name = "player";
 }
 
 Player::~Player()
@@ -14,10 +16,13 @@ bool Player::Initialize()
 {
 	player = new Sprite();
 	player->Initialize(L"Resources/Player/player.png");
+
 	//Player/player
 
 	AddChild(player);
-	
+	m_collision = new Collision(this->player->Center , 100, this);
+
+
 
 	Object::Initialize();
 
@@ -27,6 +32,7 @@ bool Player::Initialize()
 void Player::Update(float deltaTime)
 {
 	Object::Update(deltaTime);
+	m_collision->SetPostion(Position.x, Position.y);
 
 	if (Input::IsKeyDown(VK_LEFT))
 		Position.x -= speed;
@@ -59,4 +65,10 @@ void Player::Render()
 void Player::Attack()
 {
 	
+}
+
+void Player::IsCollisionWith(Collision * other)
+{
+	if (other->Parent->Name == "urak")
+		printf("Player - Urak Collide\n");
 }

@@ -1,20 +1,20 @@
 #pragma once
-class Bullet : public Object
+class Urak : public Object
 {
 private:
-	Sprite* bullet;
+	Sprite* urak;
+
 	Collision* m_collision;
 
+	int speed;
 public:
-	Bullet();
-	~Bullet();
+	Urak();
+	~Urak();
 
 	bool Initialize();
 	void Update(float deltaTime);
 	void Render();
-	int LifeTime;
-	int deathTime;
 
 	void IsCollisionWith(Collision* collision);
-};
 
+};

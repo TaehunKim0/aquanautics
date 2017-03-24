@@ -4,14 +4,18 @@
 
 Collision::Collision()
 {
+	
 }
 
-Collision::Collision(D3DXVECTOR3 center, float r)
+Collision::Collision(D3DXVECTOR3 center, float r , Object* parent)
 {
 	Center = center;
 	radius = r;
+	Parent = parent;
 
 	CollisionMgr::GetInstance()->RegisterCollision(this);
+
+	printf("Collision µî·Ï\n");
 }
 
 Collision::~Collision()
@@ -31,7 +35,9 @@ void Collision::Render()
 {
 }
 
-bool Collision::IsCollideWith(Collision * other)
+void Collision::IsCollide(Collision * other)
 {
-	return false;
+	Parent->IsCollisionWith(other);
 }
+
+

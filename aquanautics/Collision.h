@@ -6,7 +6,7 @@ private:
 
 public:
 	Collision();
-	Collision(D3DXVECTOR3 center , float r);
+	Collision(D3DXVECTOR3 center , float r, Object* parent);
 	~Collision();
 
 	D3DXVECTOR3 Center;
@@ -16,5 +16,5 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
-	bool IsCollideWith(Collision * other);
+	void IsCollide(Collision * other);
 };

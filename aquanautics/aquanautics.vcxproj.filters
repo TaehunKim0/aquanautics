@@ -19,9 +19,11 @@
     <Filter Include="Game\Unit">
       <UniqueIdentifier>{d24c9429-eb20-4ed2-9563-f1d551da70d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\Manager">
+      <UniqueIdentifier>{8d2172bd-e255-425e-8150-713ac0dafdd6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h" />
     <ClInclude Include="Object.h">
       <Filter>FrameWork\Node</Filter>
     </ClInclude>
@@ -49,17 +51,8 @@
     <ClInclude Include="Input.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceMgr.h">
-      <Filter>FrameWork\Node2</Filter>
-    </ClInclude>
     <ClInclude Include="Intro.h">
       <Filter>Game\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMgr.h">
-      <Filter>FrameWork\Node2</Filter>
-    </ClInclude>
-    <ClInclude Include="BackGround.h">
-      <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>Game\Scene</Filter>
@@ -79,19 +72,38 @@
     <ClInclude Include="Collision.h">
       <Filter>FrameWork\Node</Filter>
     </ClInclude>
-    <ClInclude Include="BulletMgr.h">
-      <Filter>FrameWork\Node2</Filter>
-    </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionMgr.h">
+    <ClInclude Include="AddOnPlayer.h">
+      <Filter>Game\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
-    <ClInclude Include="AddOnPlayer.h" />
+    <ClInclude Include="BulletMgr.h">
+      <Filter>FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMgr.h">
+      <Filter>FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Urak.h">
+      <Filter>Game\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemySpawner.h">
+      <Filter>Game\Unit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Object.cpp">
       <Filter>FrameWork\Node</Filter>
     </ClCompile>
@@ -116,19 +128,10 @@
     <ClCompile Include="Input.cpp">
       <Filter>FrameWork\Node2</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceMgr.cpp">
-      <Filter>FrameWork\Node2</Filter>
-    </ClCompile>
     <ClCompile Include="Intro.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="WinMain.cpp" />
-    <ClCompile Include="PlayerMgr.cpp">
-      <Filter>FrameWork\Node2</Filter>
-    </ClCompile>
-    <ClCompile Include="BackGround.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="MainMenu.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
@@ -150,12 +153,32 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>FrameWork\Node2</Filter>
     </ClCompile>
-    <ClCompile Include="BulletMgr.cpp">
+    <ClCompile Include="AddOnPlayer.cpp">
+      <Filter>Game\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
       <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMgr.cpp">
+      <Filter>FrameWork\Manager</Filter>
     </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
-      <Filter>FrameWork\Node2</Filter>
+      <Filter>FrameWork\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="AddOnPlayer.cpp" />
+    <ClCompile Include="PlayerMgr.cpp">
+      <Filter>FrameWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMgr.cpp">
+      <Filter>FrameWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Urak.cpp">
+      <Filter>Game\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemySpawner.cpp">
+      <Filter>Game\Unit</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

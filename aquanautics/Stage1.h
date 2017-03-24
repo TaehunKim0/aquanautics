@@ -1,4 +1,5 @@
 #pragma once
+class Urak;
 class Stage1 : public Scene
 {
 private:
@@ -6,7 +7,7 @@ private:
 	Player* player;
 	BackGround* background;
 
-
+	Urak* urak;
 public:
 	Stage1();
 	~Stage1();
