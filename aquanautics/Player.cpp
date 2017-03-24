@@ -13,7 +13,7 @@ Player::~Player()
 bool Player::Initialize()
 {
 	player = new Sprite();
-	player->Initialize(L"Resources/Mob/urak.png");
+	player->Initialize(L"Resources/Player/player.png");
 	//Player/player
 
 	AddChild(player);

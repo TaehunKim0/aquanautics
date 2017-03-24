@@ -28,8 +28,8 @@ void AnimationSprite::NextFrame()
 {
 	currentFrame++;
 
-	//if (currentFrame > lastFrame)
-	//	currentFrame = 0;
+	if (currentFrame > lastFrame)
+		currentFrame = 0;
 }
 
 void AnimationSprite::Update(float deltaTime)
@@ -49,6 +49,7 @@ void AnimationSprite::Update(float deltaTime)
 		NextFrame();
 		printf("다음 프레임으로 %d\n", currentFrame);
 	}
+	printf("GTF : %d", GameTime::TotalFrame % frameDelay);
 }
 
 void AnimationSprite::Render()

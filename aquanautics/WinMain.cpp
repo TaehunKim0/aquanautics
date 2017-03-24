@@ -14,6 +14,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	FILE* stream;
 	freopen_s(&stream, "CON", "w", stdout);
 #endif
+	
 
 	if (Application::GetInstance()->Initialize(WINDOW_TITLE, WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_MODE))
 	{

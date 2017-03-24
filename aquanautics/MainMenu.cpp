@@ -22,7 +22,7 @@ bool MainMenu::Initialize()
 	menu->AddFrame(Sprite::Create(L"Resources/UI/Menu/introduce.png"));
 	menu->SetCurrentFrame(0);
 
-	menu->AutoNext = 1;
+	menu->AutoNext = 0;
 	
 	menu->Position.x += 600;
 	menu->Position.y += 100;
@@ -43,8 +43,10 @@ void MainMenu::Release()
 
 void MainMenu::Update(float deltaTime)
 {
-	printf("%d \n", menu->currentFrame);
-	printf("%d", GameTime::TotalFrame);
+	printf("CurrentFrame : %d \n", menu->currentFrame);
+	printf("GameTime :  %d \n", GameTime::TotalFrame);
+	printf("AutoNext : %d \n", menu->AutoNext);
+
 	//printf("Menu index : %d \n", menuIndex);
 
 	Scene::Update(deltaTime);
@@ -57,7 +59,7 @@ void MainMenu::Update(float deltaTime)
 	if (Input::IsKeyDown(VK_UP))
 		menuIndex--;
 
-	if (menu->AutoNext = false)
+	if (menu->AutoNext == false)
 	{
 		switch (menuIndex)
 		{
