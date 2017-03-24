@@ -88,6 +88,7 @@
     <ClInclude Include="CollisionMgr.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
+    <ClInclude Include="AddOnPlayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -155,5 +156,6 @@
     <ClCompile Include="CollisionMgr.cpp">
       <Filter>FrameWork\Node2</Filter>
     </ClCompile>
+    <ClCompile Include="AddOnPlayer.cpp" />
   </ItemGroup>
 </Project>

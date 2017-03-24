@@ -14,7 +14,6 @@ Collision::Collision(D3DXVECTOR3 center, float r)
 	CollisionMgr::GetInstance()->RegisterCollision(this);
 }
 
-
 Collision::~Collision()
 {
 }

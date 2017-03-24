@@ -7,6 +7,9 @@ private:
 
 	int menuIndex;
 
+	Sprite* howtoplay;
+	
+
 public:
 	MainMenu();
 	~MainMenu();

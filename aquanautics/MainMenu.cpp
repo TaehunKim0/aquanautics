@@ -27,9 +27,15 @@ bool MainMenu::Initialize()
 	menu->Position.x += 600;
 	menu->Position.y += 100;
 
+	howtoplay = new Sprite();
+	howtoplay->Initialize(L"Resources/UI/Menu/howtoplays.png");
+
 	AddChild(Sprite::Create(L"Resources/Map/stage1.png"));
 	AddChild(menu);
-	
+	AddChild(howtoplay);
+
+	howtoplay->visible = false;
+
 	Scene::Initialize();
 
 	return true;
@@ -92,39 +98,45 @@ void MainMenu::Update(float deltaTime)
 			break;
 		}
 	}
-
-	if (Input::IsKeyDown(VK_RETURN))
+	if (menu->AutoNext == false)
 	{
-		switch (menuIndex)
+		if (Input::IsKeyDown(VK_RETURN))
 		{
-		case -1:
-			Director::GetInstance()->LoadScene(new Stage1());
-			break;
+			switch (menuIndex)
+			{
+			case -1:
+				Director::GetInstance()->LoadScene(new Stage1());
+				break;
 
-		case 0://게임 스타트
-			Director::GetInstance()->LoadScene(new Stage1());
-			break;
+			case 0://게임 스타트
+				Director::GetInstance()->LoadScene(new Stage1());
+				break;
 
-		case 1://게임방법
-			
-			break;
+			case 1://게임방법
+				howtoplay->visible = true;
+				break;
 
-		case 2://랭킹
-			
-			break;
+			case 2://랭킹
 
-		case 3://크레딧
-			
-			break;
+				break;
 
-		case 4://게임소개
-			
+			case 3://크레딧
 
-		case 5:
-			
-			break;
+				break;
+
+			case 4://게임소개
+
+
+			case 5:
+
+				break;
+			}
 		}
 	}
+
+	if (Input::IsKeyDown('M'))
+		Director::GetInstance()->LoadScene(new MainMenu());
+	
 }
 
 void MainMenu::Render()

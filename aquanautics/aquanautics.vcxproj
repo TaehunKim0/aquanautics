@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AddOnPlayer.h" />
     <ClInclude Include="AnimationSprite.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="BackGround.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddOnPlayer.cpp" />
     <ClCompile Include="AnimationSprite.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BackGround.cpp" />
