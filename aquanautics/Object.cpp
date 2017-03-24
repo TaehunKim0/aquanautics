@@ -75,3 +75,17 @@ void Object::AddChild(Object * child)
 	child->Parent = this;
 	Children.push_back(child);
 }
+
+void Object::RemoveChild(Object* child)
+{
+	if (Children.empty())
+		return;
+
+	auto iterator = std::find(std::begin(Children), std::end(Children), child);
+	if (iterator != Children.end())
+	{
+		SAFE_DELETE(child);
+
+		Children.erase(iterator);
+	}
+}

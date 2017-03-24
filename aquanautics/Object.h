@@ -37,5 +37,7 @@ public:
 
 	bool GetVisisble() { return visible; }
 	void SetVisible(bool visible) { this->visible = visible; }
+
+	void RemoveChild(Object* child);
 };
 

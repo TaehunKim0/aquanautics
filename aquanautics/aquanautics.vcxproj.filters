@@ -22,6 +22,12 @@
     <Filter Include="FrameWork\Manager">
       <UniqueIdentifier>{8d2172bd-e255-425e-8150-713ac0dafdd6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\UI">
+      <UniqueIdentifier>{d25067b9-00d3-4368-b5d4-56330a022ba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Item">
+      <UniqueIdentifier>{48aed2ea-8764-4496-a771-27a359cca518}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -102,6 +108,10 @@
     <ClInclude Include="EnemySpawner.h">
       <Filter>Game\Unit</Filter>
     </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Game\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemMgr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp">
@@ -180,5 +190,9 @@
     <ClCompile Include="EnemySpawner.cpp">
       <Filter>Game\Unit</Filter>
     </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Game\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemMgr.cpp" />
   </ItemGroup>
 </Project>

@@ -16,4 +16,5 @@ public:
 	void RegisterCollision(Collision* collision);
 
 	bool CircleCollide(Collision* a, Collision* b);
+	
 };

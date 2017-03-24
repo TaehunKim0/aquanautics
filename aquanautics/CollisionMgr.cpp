@@ -27,13 +27,29 @@ void CollisionMgr::Update(float deltaTime)
 		{
 			if (a != b)
 			{
-				if (CircleCollide(a,b))
+				if (CircleCollide(a, b))
 				{
 					a->IsCollide(b);
 					b->IsCollide(a);
 				}
 			}
+				
 		}
+		
+
+	/*for (auto a : collisionList)
+	{
+		if (a->Parent->visible == false)
+		{
+			SAFE_DELETE(a->Parent);
+			std::vector<Collision*>::iterator iter = std::find(collisionList.begin(), collisionList.end(), a);
+			collisionList.erase(iter);
+		}
+
+		else
+			printf("else\n");
+	}*/
+
 	Object::Update(deltaTime);
 }
 

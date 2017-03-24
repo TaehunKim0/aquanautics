@@ -166,6 +166,8 @@
     <ClInclude Include="GameTime.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Intro.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemMgr.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
@@ -194,6 +196,8 @@
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Intro.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemMgr.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />

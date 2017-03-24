@@ -1,10 +1,12 @@
 #pragma once
 class Bullet;
+class AnimationSprite;
 class Player : public Object
 {
 private:
 	Sprite* player;
-	Sprite* p;
+	AnimationSprite* life;
+	int lifeCount;
 	float speed;
 
 	Collision * m_collision;
@@ -19,4 +21,5 @@ public:
 	void Attack();
 
 	void IsCollisionWith(Collision* other);
+	
 };

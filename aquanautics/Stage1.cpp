@@ -26,6 +26,7 @@ bool Stage1::Initialize()
 	AddChild(BulletMgr::GetInstance());
 	AddChild(EnemySpawner::GetInstance());
 	AddChild(CollisionMgr::GetInstance());
+	AddChild(ItemMgr::GetInstance());
 
 	//AddChild(urak);
 

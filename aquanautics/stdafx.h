@@ -48,3 +48,5 @@
 #include"Collision.h"
 #include"CollisionMgr.h"
 #include"EnemySpawner.h"
+#include"ItemMgr.h"
+#include"Item.h"

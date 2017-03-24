@@ -7,6 +7,7 @@ private:
 	Collision* m_collision;
 
 	int speed;
+	int lifeCount;
 public:
 	Urak();
 	~Urak();

@@ -47,15 +47,13 @@ void AnimationSprite::Update(float deltaTime)
 	if (GameTime::TotalFrame % frameDelay == 0)
 	{
 		NextFrame();
-		printf("다음 프레임으로 %d\n", currentFrame);
 	}
-	printf("GTF : %d", GameTime::TotalFrame % frameDelay);
+	
 }
 
 void AnimationSprite::Render()
 {
 	Object::Render();
-	printf("%d 번애니 렌더링\n", currentFrame);
 	auto sprite = spriteList.at(currentFrame);
 
 
