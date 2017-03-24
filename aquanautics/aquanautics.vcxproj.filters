@@ -70,9 +70,6 @@
     <ClInclude Include="Player.h">
       <Filter>Game\Unit</Filter>
     </ClInclude>
-    <ClInclude Include="Stage2.h">
-      <Filter>Game\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="GameTime.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
@@ -129,9 +126,6 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Game\Unit</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage2.cpp">
-      <Filter>Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="GameTime.cpp">
       <Filter>FrameWork\Node2</Filter>
