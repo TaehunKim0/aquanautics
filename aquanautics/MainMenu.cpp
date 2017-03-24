@@ -7,7 +7,6 @@ MainMenu::MainMenu() : menuIndex(0)
 	printf("Menu Scene \n");
 }
 
-
 MainMenu::~MainMenu()
 {
 }
@@ -15,8 +14,7 @@ MainMenu::~MainMenu()
 bool MainMenu::Initialize()
 {
 	menu = new AnimationSprite(4, 10);
-	menu->AutoNext = false;
-	
+
 	menu->AddFrame(Sprite::Create(L"Resources/UI/Menu/gamestart.png"));
 	menu->AddFrame(Sprite::Create(L"Resources/UI/Menu/howtoplay.png"));
 	menu->AddFrame(Sprite::Create(L"Resources/UI/Menu/ranking.png"));
@@ -24,14 +22,18 @@ bool MainMenu::Initialize()
 	menu->AddFrame(Sprite::Create(L"Resources/UI/Menu/introduce.png"));
 	menu->SetCurrentFrame(0);
 
-	menu->AutoNext = false;
-	menu->visible = true;
+	menu->AutoNext = 1;
+	
+	menu->Position.x += 600;
+	menu->Position.y += 100;
 
+	AddChild(Sprite::Create(L"Resources/Map/stage1.png"));
 	AddChild(menu);
-	//AddChild(Sprite::Create(L"Resources/Map/stage1.png"));
+	
 	Scene::Initialize();
 
-	return false;
+	return true;
+
 }
 
 void MainMenu::Release()
@@ -41,8 +43,11 @@ void MainMenu::Release()
 
 void MainMenu::Update(float deltaTime)
 {
+	printf("%d \n", menu->currentFrame);
+	printf("%d", GameTime::TotalFrame);
+	//printf("Menu index : %d \n", menuIndex);
+
 	Scene::Update(deltaTime);
-	
 
 	menuIndex = min(max(menuIndex, 0), 4);
 
@@ -52,7 +57,7 @@ void MainMenu::Update(float deltaTime)
 	if (Input::IsKeyDown(VK_UP))
 		menuIndex--;
 
-	if (Input::IsKeyDown(VK_RETURN))
+	if (menu->AutoNext = false)
 	{
 		switch (menuIndex)
 		{
@@ -78,6 +83,7 @@ void MainMenu::Update(float deltaTime)
 
 		case 4://게임소개
 			menu->SetCurrentFrame(4);
+			break;
 
 		case 5:
 			menu->SetCurrentFrame(4);

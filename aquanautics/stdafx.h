@@ -44,3 +44,5 @@
 #include"Director.h"
 #include"BulletMgr.h"
 #include"Texture.h"
+#include"Collision.h"
+#include"CollisionMgr.h"

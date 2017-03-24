@@ -4,6 +4,7 @@
 
 BulletMgr::BulletMgr()
 {
+	printf("BulletMgr »ý¼º\n");
 }
 
 

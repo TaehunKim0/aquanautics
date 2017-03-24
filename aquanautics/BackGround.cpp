@@ -4,6 +4,7 @@
 
 BackGround::BackGround()
 {
+	printf("Background »ý¼º\n");
 }
 
 
@@ -14,6 +15,7 @@ BackGround::~BackGround()
 bool BackGround::Initialize()
 {
 	back = new Sprite();
+	back->Initialize(L"Resources/Map/stage1.png");
 
 	AddChild(back);
 	return true;
@@ -31,14 +33,6 @@ void BackGround::Render()
 
 void BackGround::SetBackGround(std::wstring fileName)
 {
-	if (back->Texture == nullptr)
-	{
-		back->Initialize(fileName);
-	}
-
-	else
-	{
-		back->Texture = nullptr;
-		back->Initialize(fileName);
-	}
+	back->Initialize(fileName);
+	printf("SetBacground : %s \n", fileName);
 }

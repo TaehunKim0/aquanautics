@@ -33,14 +33,6 @@ bool Sprite::Initialize(std::wstring fileName)
 void Sprite::Release()
 {
 	SAFE_RELEASE(D3DSprite);
-
-	if (Texture)
-	{
-		Texture->Release();
-		delete Texture;
-
-		Texture = nullptr;
-	}
 }
 
 void Sprite::Update(float deltaTime)
@@ -53,9 +45,10 @@ void Sprite::Render()
 	Object::Render();
 
 	RECT srcRect;
-	SetRect(&srcRect, 0, 0, static_cast<int>(Texture->Size.x), static_cast<int>(Texture->Size.x));
+	SetRect(&srcRect, 0, 0, static_cast<int>(Texture->Size.x), static_cast<int>(Texture->Size.y));
 
 	D3DXVECTOR3 center(Texture->Size.x / 2, Texture->Size.y / 2, 0.f);
+	this->Center = center;
 
 	D3DSprite->Begin(D3DXSPRITE_ALPHABLEND);
 	D3DSprite->SetTransform(&Matrix);
@@ -68,5 +61,6 @@ Sprite * Sprite::Create(std::wstring filename)
 {
 	auto instance = new Sprite();
 	instance->Initialize(filename);
+
 	return instance;
 }

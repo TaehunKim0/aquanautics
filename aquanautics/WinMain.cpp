@@ -17,7 +17,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	if (Application::GetInstance()->Initialize(WINDOW_TITLE, WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_MODE))
 	{
-		Director::GetInstance()->LoadScene(new Intro());
+		Director::GetInstance()->LoadScene(new MainMenu());
 
 		Application::GetInstance()->Run();
 		Application::GetInstance()->Release();

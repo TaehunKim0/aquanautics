@@ -4,6 +4,7 @@
 
 Stage1::Stage1()
 {
+	printf("Stage 1 \n");
 }
 
 
@@ -15,7 +16,7 @@ bool Stage1::Initialize()
 {
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new BackGround();
-	
+	background->Initialize();
 	
 	AddChild(background);
 	AddChild(player);
@@ -23,9 +24,11 @@ bool Stage1::Initialize()
 
 	Scene::Initialize();
 
-	background->SetBackGround(L"Resources/Map/stage1.png");
+	//background->SetBackGround(L"Resources/Map/stage1.png");
 
-	return false;
+
+
+	return true;
 }
 
 void Stage1::Release()

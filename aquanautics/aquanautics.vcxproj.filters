@@ -76,8 +76,18 @@
     <ClInclude Include="AnimationSprite.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
-    <ClInclude Include="BulletMgr.h" />
-    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Collision.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMgr.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>FrameWork\Node2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -133,7 +143,17 @@
     <ClCompile Include="AnimationSprite.cpp">
       <Filter>FrameWork\Node2</Filter>
     </ClCompile>
-    <ClCompile Include="BulletMgr.cpp" />
-    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Collision.cpp">
+      <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMgr.cpp">
+      <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>FrameWork\Node2</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

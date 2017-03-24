@@ -26,7 +26,7 @@ bool Bullet::Initialize()
 void Bullet::Update(float deltaTime)
 {
 	LifeTime++;
-	Position.x += 3;
+	Position.x += 10;
 
 	if (LifeTime == deathTime)
 		this->SetVisible(false);

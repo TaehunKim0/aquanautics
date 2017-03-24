@@ -13,8 +13,8 @@ Player::~Player()
 bool Player::Initialize()
 {
 	player = new Sprite();
-	player->Initialize(L"Resources/Player/player.png");
-
+	player->Initialize(L"Resources/Mob/urak.png");
+	//Player/player
 
 	AddChild(player);
 	
@@ -42,9 +42,9 @@ void Player::Update(float deltaTime)
 
 	if (Input::IsKeyDown(VK_SPACE) && GameTime::CurrentFrame % 10 == 0)
 	{
-		auto bullet = new Bullet();
-		bullet->Position.x += (this->Position.x) +(player->Texture->Size.x / 2);
-		bullet->Position.y += (this->Position.y) + (player->Texture->Size.y / 2);
+ 		auto bullet = new Bullet();
+		bullet->Position.x += (this->Position.x) +(player->Texture->Size.x / 2 ) + 55;
+		bullet->Position.y += (this->Position.y) + (player->Texture->Size.y / 2) + 29;
 
 		BulletMgr::GetInstance()->RegisterBullet(bullet);
 		BulletMgr::GetInstance()->Initialize();

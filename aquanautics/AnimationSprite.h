@@ -4,7 +4,7 @@ class AnimationSprite : public Sprite
 private:
 	std::vector<Sprite*> spriteList;
 
-	int currentFrame;
+
 	int lastFrame;
 
 	int frameDelay;
@@ -20,7 +20,7 @@ public:
 	void NextFrame();
 
 	bool AutoNext;
-
+	int currentFrame;
 	void Update(float deltaTime);
 	void Render();
 };

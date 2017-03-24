@@ -155,6 +155,8 @@
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletMgr.h" />
+    <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Director.h" />
     <ClInclude Include="GameTime.h" />
     <ClInclude Include="Input.h" />
@@ -178,6 +180,8 @@
     <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletMgr.cpp" />
+    <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="Input.cpp" />
