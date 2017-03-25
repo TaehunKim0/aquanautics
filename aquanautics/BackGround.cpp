@@ -20,7 +20,6 @@ bool BackGround::Initialize()
 	back2->Initialize(L"Resources/Map/stage1.png");
 	back2->SetPostion(2500, 0);
 
-	
 	AddChild(back);
 	AddChild(back2);
 

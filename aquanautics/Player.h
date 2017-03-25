@@ -2,14 +2,14 @@
 class Bullet;
 class AnimationSprite;
 class Weapon;
-
+class AddOnPlayer;
 class Player : public Object
 {
 private:
 	Sprite* player;
 	AnimationSprite* life;
 	AnimationSprite* nuclear;
-
+	//AddOnPlayer* add;
 	int lifeCount;
 	float speed;
 
@@ -18,8 +18,6 @@ private:
 
 	int collisionTime;
 	bool Cancollision;
-
-
 
 public:
 	Player();
@@ -33,5 +31,5 @@ public:
 	void Move();
 	void IsCollisionWith(Collision* other);
 	
-	bool IsAddOnPlayer;
+	int IsAddOnPlayer;
 };

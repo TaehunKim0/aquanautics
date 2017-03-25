@@ -3,6 +3,7 @@
 #include"Torpedo.h"
 #include"Weapon.h"
 #include"TripleBullet.h"
+#include"AddOnPlayer.h"
 
 Player::Player() : speed(7.0f) , lifeCount(5) , collisionTime(0) ,Cancollision(1) , IsAddOnPlayer(0)
 {
@@ -22,7 +23,7 @@ bool Player::Initialize()
 	player->Initialize(L"Resources/Player/player.png");
 	m_collision = new Collision(this->player->Center, 100, this);
 
-
+	//
 	life = new AnimationSprite(4, 10);
 	life->AddFrame(Sprite::Create(L"Resources/UI/Life/1.png"));
 	life->AddFrame(Sprite::Create(L"Resources/UI/Life/2.png"));
@@ -32,12 +33,13 @@ bool Player::Initialize()
 	life->SetCurrentFrame(4);
 	life->AutoNext = false;
 	life->SetPostion(50, 30);
-
+	//
 	weapon = new Weapon();
 	weapon->SetPostion(610, 70);
 	weapon->Initialize();
-	//weapon->SetWeaponType(WeaponType::tripletorpedo);
 
+	weapon->SetWeaponType(WeaponType::torpedo);
+	//
 	nuclear = new AnimationSprite(2, 10);
 	nuclear->AddFrame(Sprite::Create(L"Resources/UI/Weapon/nuclear1.png"));
 	nuclear->AddFrame(Sprite::Create(L"Resources/UI/Weapon/nuclear2.png"));
@@ -45,7 +47,8 @@ bool Player::Initialize()
 	nuclear->SetCurrentFrame(0);
 	nuclear->AutoNext = false;
 	nuclear->SetPostion(690, 100);
-
+	//
+	
 	AddChild(player);
 
 	Object::Initialize();
@@ -123,12 +126,15 @@ void Player::Attack()
 	{
 		if (weapon->GetWeaponType() == WeaponType::torpedo)
 		{
-			auto bullet = new Torpedo();
-			bullet->Position.x += (this->Position.x) + (player->Texture->Size.x / 2) + 55;
-			bullet->Position.y += (this->Position.y) + (player->Texture->Size.y / 2) + 29;
+			auto bullet0 = new Torpedo();
+			bullet0->Position.x += (this->Position.x) + (player->Texture->Size.x / 2) + 55;
+			bullet0->Position.y += (this->Position.y) + (player->Texture->Size.y / 2) + 29;
 
-			BulletMgr::GetInstance()->RegisterBullet(bullet);
+			BulletMgr::GetInstance()->RegisterBullet(bullet0);
 			BulletMgr::GetInstance()->Initialize();
+
+			PRINT(bullet0->Position.x);
+			PRINT(bullet0->Position.y);
 		}
 	
 		if (weapon->GetWeaponType() == WeaponType::tripletorpedo)
@@ -157,9 +163,30 @@ void Player::Attack()
 
 	}
 
-	if (Input::IsKeyDown(VK_LSHIFT))
-	{
+	if (Input::IsKeyDown('I'))
+		IsAddOnPlayer = 2;
 
+	if (Input::IsKeyDown(VK_F7))
+	{
+		IsAddOnPlayer++;
+
+		if (IsAddOnPlayer < 3)
+		{
+			if (IsAddOnPlayer == 2)
+			{
+				auto addon = new AddOnPlayer();
+				addon->Initialize();
+				addon->SetPostion(50, 130);
+				AddChild(addon);
+
+				return;
+			}
+
+			auto addon = new AddOnPlayer();
+			addon->Initialize();
+
+			AddChild(addon);
+		}
 	}
 }
 
@@ -200,10 +227,22 @@ void Player::IsCollisionWith(Collision * other)
 			Cancollision = 0;
 		}
 
-		if (other->Parent->Name == "speedup")
-		{
-			speed += 50;
+		if (other->Parent->Name == "addonplayer")
+		{	
+			IsAddOnPlayer++;
+			if (IsAddOnPlayer == 3)
+				return;
+
+			auto addon = new AddOnPlayer();
+			addon->Initialize();
+
+			AddChild(addon);
 			Cancollision = 0;
 		}
 	}
+	if (other->Parent->Name == "speedup")
+		speed += 50;
+
+
+
 }

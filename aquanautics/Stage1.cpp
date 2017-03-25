@@ -8,7 +8,6 @@ Stage1::Stage1()
 	GameTime::TotalFrame = 0;
 }
 
-
 Stage1::~Stage1()
 {
 }
@@ -19,12 +18,12 @@ bool Stage1::Initialize()
 	background = new BackGround();
 	progress = new ProgressRate();
 
-	AddChild(background);
+	//AddChild(background);
 	AddChild(player);
 	AddChild(BulletMgr::GetInstance());
 
-	//AddChild(EnemySpawner::GetInstance());
-	//AddChild(CollisionMgr::GetInstance());
+	AddChild(EnemySpawner::GetInstance());
+	AddChild(CollisionMgr::GetInstance());
 	//AddChild(ItemMgr::GetInstance());
 	//AddChild(progress);
 
