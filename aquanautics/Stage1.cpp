@@ -18,14 +18,14 @@ bool Stage1::Initialize()
 	background = new BackGround();
 	progress = new ProgressRate();
 
-	//AddChild(background);
+	AddChild(background);
 	AddChild(player);
 	AddChild(BulletMgr::GetInstance());
 
 	AddChild(EnemySpawner::GetInstance());
 	AddChild(CollisionMgr::GetInstance());
-	//AddChild(ItemMgr::GetInstance());
-	//AddChild(progress);
+	AddChild(ItemMgr::GetInstance());
+	AddChild(progress);
 
 	Scene::Initialize();
 
