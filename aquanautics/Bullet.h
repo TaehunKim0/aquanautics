@@ -2,19 +2,18 @@
 class Bullet : public Object
 {
 private:
-	Sprite* bullet;
-	Collision* m_collision;
 
 public:
 	Bullet();
 	~Bullet();
 
-	bool Initialize();
-	void Update(float deltaTime);
-	void Render();
+	virtual bool Initialize();
+	virtual void Update(float deltaTime);
+	virtual void Render();
+
 	int LifeTime;
 	int deathTime;
 
-	void IsCollisionWith(Collision* collision);
+	virtual void IsCollisionWith(Collision* collision);
 };
 

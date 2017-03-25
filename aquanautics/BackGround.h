@@ -14,4 +14,3 @@ public:
 
 	void SetBackGround(std::wstring fileName);
 };
-

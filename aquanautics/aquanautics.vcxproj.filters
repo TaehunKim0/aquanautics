@@ -28,6 +28,9 @@
     <Filter Include="Game\Item">
       <UniqueIdentifier>{48aed2ea-8764-4496-a771-27a359cca518}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Bullet">
+      <UniqueIdentifier>{dcce6baf-ad1e-4baa-b41c-6efe359c15e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -78,9 +81,6 @@
     <ClInclude Include="Collision.h">
       <Filter>FrameWork\Node</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>FrameWork\Node2</Filter>
-    </ClInclude>
     <ClInclude Include="AddOnPlayer.h">
       <Filter>Game\Unit</Filter>
     </ClInclude>
@@ -111,10 +111,26 @@
     <ClInclude Include="Item.h">
       <Filter>Game\Item</Filter>
     </ClInclude>
-    <ClInclude Include="ItemMgr.h" />
-    <ClInclude Include="ProgressRate.h" />
     <ClInclude Include="Weapon.h">
       <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Game\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="TripleBullet.h">
+      <Filter>Game\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressRate.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemMgr.h">
+      <Filter>FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Torpedo.h">
+      <Filter>Game\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Misille.h">
+      <Filter>Game\Bullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -164,9 +180,6 @@
     <ClCompile Include="Collision.cpp">
       <Filter>FrameWork\Node</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>FrameWork\Node2</Filter>
-    </ClCompile>
     <ClCompile Include="AddOnPlayer.cpp">
       <Filter>Game\Unit</Filter>
     </ClCompile>
@@ -197,10 +210,26 @@
     <ClCompile Include="Item.cpp">
       <Filter>Game\Item</Filter>
     </ClCompile>
-    <ClCompile Include="ItemMgr.cpp" />
-    <ClCompile Include="ProgressRate.cpp" />
     <ClCompile Include="Weapon.cpp">
       <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Game\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="TripleBullet.cpp">
+      <Filter>Game\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressRate.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemMgr.cpp">
+      <Filter>FrameWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Torpedo.cpp">
+      <Filter>Game\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Misille.cpp">
+      <Filter>Game\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

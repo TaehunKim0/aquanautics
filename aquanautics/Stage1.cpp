@@ -23,10 +23,10 @@ bool Stage1::Initialize()
 	AddChild(background);
 	AddChild(player);
 	AddChild(BulletMgr::GetInstance());
-	AddChild(EnemySpawner::GetInstance());
-	AddChild(CollisionMgr::GetInstance());
-	AddChild(ItemMgr::GetInstance());
-	AddChild(progress);
+	//AddChild(EnemySpawner::GetInstance());
+	//AddChild(CollisionMgr::GetInstance());
+	//AddChild(ItemMgr::GetInstance());
+	//AddChild(progress);
 
 	Scene::Initialize();
 

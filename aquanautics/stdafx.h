@@ -51,3 +51,5 @@
 #include"ItemMgr.h"
 #include"Item.h"
 #include"ProgressRate.h"
+#include"Bullet.h"
+#include"AddOnPlayer.h"

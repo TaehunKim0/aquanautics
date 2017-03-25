@@ -40,11 +40,18 @@ void Sprite::Release()
 
 void Sprite::Update(float deltaTime)
 {
+	if (!visible)
+		return;
+
+
 	Object::Update(deltaTime);
 }
 
 void Sprite::Render()
 {
+	if (!visible)
+		return;
+
 	Object::Render();
 
 	RECT srcRect;

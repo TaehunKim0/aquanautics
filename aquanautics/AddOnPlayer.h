@@ -1,8 +1,10 @@
 #pragma once
+class Player;
 class AddOnPlayer : public Object
 {
 private:
-
+	Sprite* addonplayer;
+	Player* player;
 
 public:
 	AddOnPlayer();
@@ -12,6 +14,6 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
-
+	void Attack();
 };
 

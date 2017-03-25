@@ -30,7 +30,7 @@ bool MainMenu::Initialize()
 	howtoplay = new Sprite();
 	howtoplay->Initialize(L"Resources/UI/Menu/howtoplays.png");
 
-	AddChild(Sprite::Create(L"Resources/Map/stage1.png"));
+	AddChild(Sprite::Create(L"Resources/Map/menu.png"));
 	AddChild(menu);
 	AddChild(howtoplay);
 

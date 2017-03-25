@@ -24,5 +24,11 @@ public:
 	void Update(float deltaTime);
 	bool Initialize();
 	void Render();
-};
 
+public:
+	WeaponType::Enum weaponType;
+
+	void SetWeaponType(WeaponType::Enum type);
+
+	WeaponType::Enum GetWeaponType();
+};
