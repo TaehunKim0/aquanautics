@@ -101,9 +101,14 @@ void Player::Update(float deltaTime)
 		collisionTime++;
 
 		if (collisionTime == 360)
+		{
 			Cancollision = true;
+			collisionTime = 0;
+		}
 
 	}
+
+
 
 }
 
@@ -126,7 +131,7 @@ void Player::IsCollisionWith(Collision * other)
 	{
 		if (other->Parent->Name == "urak")
 		{
-			lifeCount -= 1;
+			lifeCount--;
 
 			Cancollision = 0;
 		}

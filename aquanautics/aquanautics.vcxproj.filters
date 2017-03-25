@@ -113,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="ItemMgr.h" />
     <ClInclude Include="ProgressRate.h" />
+    <ClInclude Include="Weapon.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp">
@@ -196,5 +199,8 @@
     </ClCompile>
     <ClCompile Include="ItemMgr.cpp" />
     <ClCompile Include="ProgressRate.cpp" />
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
