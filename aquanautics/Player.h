@@ -10,6 +10,10 @@ private:
 	float speed;
 
 	Collision * m_collision;
+
+	int collisionTime;
+	bool Cancollision;
+
 public:
 	Player();
 	~Player();

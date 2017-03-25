@@ -50,3 +50,4 @@
 #include"EnemySpawner.h"
 #include"ItemMgr.h"
 #include"Item.h"
+#include"ProgressRate.h"

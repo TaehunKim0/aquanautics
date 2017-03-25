@@ -6,8 +6,9 @@ private:
 
 	Player* player;
 	BackGround* background;
-
 	Urak* urak;
+	ProgressRate* progress;
+
 public:
 	Stage1();
 	~Stage1();

@@ -2,7 +2,7 @@
 #include "Player.h"
 #include"Bullet.h"
 
-Player::Player() : speed(7.0f) , lifeCount(5)
+Player::Player() : speed(7.0f) , lifeCount(5) , collisionTime(0) ,Cancollision(1)
 {
 	id = 12;
 	Name = "player";
@@ -33,7 +33,7 @@ bool Player::Initialize()
 
 	AddChild(player);
 	
-	life->SetPostion(50, 50);
+	life->SetPostion(50, 10);
 
 	m_collision = new Collision(this->player->Center , 100, this);
 
@@ -95,6 +95,16 @@ void Player::Update(float deltaTime)
 		life->SetCurrentFrame(4);
 		break;
 	}
+
+	if (!Cancollision)
+	{
+		collisionTime++;
+
+		if (collisionTime == 360)
+			Cancollision = true;
+
+	}
+
 }
 
 void Player::Render()
@@ -103,8 +113,6 @@ void Player::Render()
 
 	if (lifeCount > 0)
 		life->Render();
-	
-	
 }
 
 void Player::Attack()
@@ -114,10 +122,14 @@ void Player::Attack()
 
 void Player::IsCollisionWith(Collision * other)
 {
-	if (other->Parent->Name == "urak")
+	if (Cancollision)
 	{
-		lifeCount -= 1;
+		if (other->Parent->Name == "urak")
+		{
+			lifeCount -= 1;
 
-		//3초간 무적
+			Cancollision = 0;
+		}
 	}
+
 }

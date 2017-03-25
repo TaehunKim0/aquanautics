@@ -18,8 +18,7 @@ bool Stage1::Initialize()
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new BackGround();
 	background->Initialize();
-	//urak = new Urak();
-
+	progress = new ProgressRate();
 
 	AddChild(background);
 	AddChild(player);
@@ -27,12 +26,10 @@ bool Stage1::Initialize()
 	AddChild(EnemySpawner::GetInstance());
 	AddChild(CollisionMgr::GetInstance());
 	AddChild(ItemMgr::GetInstance());
-
-	//AddChild(urak);
+	AddChild(progress);
 
 	Scene::Initialize();
 
-	//background->SetBackGround(L"Resources/Map/stage1.png");
 	return true;
 }
 
