@@ -4,7 +4,6 @@ class AnimationSprite : public Sprite
 private:
 	std::vector<Sprite*> spriteList;
 
-
 	int lastFrame;
 
 	int frameDelay;

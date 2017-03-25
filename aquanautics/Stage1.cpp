@@ -17,12 +17,12 @@ bool Stage1::Initialize()
 {
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new BackGround();
-	background->Initialize();
 	progress = new ProgressRate();
 
 	AddChild(background);
 	AddChild(player);
 	AddChild(BulletMgr::GetInstance());
+
 	//AddChild(EnemySpawner::GetInstance());
 	//AddChild(CollisionMgr::GetInstance());
 	//AddChild(ItemMgr::GetInstance());

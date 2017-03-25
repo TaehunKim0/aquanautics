@@ -2,6 +2,7 @@
 class Bullet;
 class AnimationSprite;
 class Weapon;
+
 class Player : public Object
 {
 private:
