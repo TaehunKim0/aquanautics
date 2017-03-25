@@ -2,7 +2,7 @@
 #include "Player.h"
 #include"Bullet.h"
 
-Player::Player() : speed(7.0f) , lifeCount(4)
+Player::Player() : speed(7.0f) , lifeCount(5)
 {
 	id = 12;
 	Name = "player";
@@ -19,13 +19,15 @@ bool Player::Initialize()
 	player = new Sprite();
 	player->Initialize(L"Resources/Player/player.png");
 
-	life = new AnimationSprite(3, 10);
+	life = new AnimationSprite(4, 10);
 	
 	life->AddFrame(Sprite::Create(L"Resources/UI/Life/1.png"));
 	life->AddFrame(Sprite::Create(L"Resources/UI/Life/2.png"));
 	life->AddFrame(Sprite::Create(L"Resources/UI/Life/3.png"));
 	life->AddFrame(Sprite::Create(L"Resources/UI/Life/4.png"));
-	life->SetCurrentFrame(0);
+	life->AddFrame(Sprite::Create(L"Resources/UI/Life/5.png"));
+	
+	life->SetCurrentFrame(4);
 
 	life->AutoNext = false;
 
@@ -60,7 +62,7 @@ void Player::Update(float deltaTime)
 
 	if (Input::IsKeyDown(VK_DOWN))
 		Position.y += speed;
-
+	
 	if (Input::IsKeyDown(VK_SPACE) && GameTime::CurrentFrame % 10 == 0)
 	{
  		auto bullet = new Bullet();
@@ -88,10 +90,11 @@ void Player::Update(float deltaTime)
 	case 4:
 		life->SetCurrentFrame(3);
 		break;
+
+	case 5:
+		life->SetCurrentFrame(4);
+		break;
 	}
-
-	
-
 }
 
 void Player::Render()
