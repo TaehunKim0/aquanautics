@@ -68,11 +68,6 @@ void Player::Update(float deltaTime)
 
 	Move();
 
-	if (Position.x >= WINDOW_WIDTH - player->Texture->Size.x)
-	{
-		Position.x = WINDOW_WIDTH - player->Texture->Size.x;
-	}
-
 	Attack();
 
 	switch (lifeCount)
@@ -181,6 +176,18 @@ void Player::Move()
 
 	if (Input::IsKeyDown(VK_DOWN))
 		Position.y += speed;
+
+	if (Position.x >= WINDOW_WIDTH - player->Texture->Size.x)
+		Position.x = WINDOW_WIDTH - player->Texture->Size.x;
+
+	if (Position.x <= 0)
+		Position.x = 0;
+
+	if (Position.y>= WINDOW_HEIGHT - player->Texture->Size.y)
+		Position.y = WINDOW_HEIGHT - player->Texture->Size.y;
+
+	if (Position.y <= 0)
+		Position.y = 0;
 }
 
 void Player::IsCollisionWith(Collision * other)
@@ -199,7 +206,4 @@ void Player::IsCollisionWith(Collision * other)
 			Cancollision = 0;
 		}
 	}
-
-
-
 }
