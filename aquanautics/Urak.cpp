@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "Urak.h"
 
-Urak::Urak() : speed(3) , lifeCount(1), Cancollsion(1)
+Urak::Urak() : speed(3) , lifeCount(3), Cancollsion(1)
 {
-	Name = "urak";
+	
 	id = 123;
 }
 
@@ -14,6 +14,9 @@ Urak::~Urak()
 
 bool Urak::Initialize()
 {
+	Name = "urak";
+
+	
 	int r = 0;
 	srand(time(NULL));
 	r = (rand() % 2 )+1;
@@ -24,10 +27,6 @@ bool Urak::Initialize()
 	{
 		urak = new Sprite();
 		urak->Initialize(L"Resources/Mob/urak.png");
-
-		m_collision = new Collision(urak->Center, 30, this);
-
-		AddChild(urak);
 	}
 		break;
 
@@ -35,10 +34,6 @@ bool Urak::Initialize()
 	{
 		urak = new Sprite();
 		urak->Initialize(L"Resources/Mob/redurak.png");
-
-		m_collision = new Collision(urak->Center, 30, this);
-
-		AddChild(urak);
 	}
 		break;
 
@@ -47,21 +42,27 @@ bool Urak::Initialize()
 		break;
 	}
 
+	m_collision = new Collision(urak->Center, 30, this);
+
+	AddChild(urak);
+
+	//urak = new Sprite();
+	//urak->Initialize(L"Resources/Mob/urak.png");
+
+	//m_collision = new Collision(urak->Center, 70, this);
+	//
+
+	//AddChild(urak);
 
 	return true;
+
 }
 
 void Urak::Update(float deltaTime)
 {
 	Object::Update(deltaTime);
+
 	m_collision->SetPostion(Position.x, Position.y);
-
-	/*printf("Urak Collision X : %f \n", m_collision->Position.x);
-	printf("Urak Collision Y : %f \n", m_collision->Position.y);
-
-	printf("Urak X : %f \n", Position.x);
-	printf("Urak Y : %f \n", Position.y);*/
-	//Position.x -= speed;
 
 	if (lifeCount <= 0)
 	{
@@ -69,12 +70,12 @@ void Urak::Update(float deltaTime)
 
 		auto i = new Item(Position.x , Position.y);
 		i->Initialize();
-
 	}
 
-	lifeCount = 1;
+	Position.x -= 3;
 
-	Position.x -= speed;
+	if (Position.x < 0)
+		visible = false;
 }
 
 void Urak::Render()
@@ -82,10 +83,10 @@ void Urak::Render()
 	Object::Render();
 }
 
-void Urak::IsCollisionWith(Collision * collision)
+void Urak::IsCollisionWith(Collision * other)
 {
 	//if(Cancollsion)
-		if (collision->Parent->Name == "torpedo")
+		if (other->Parent->Name == "torpedo")
 		{
 			lifeCount -= 1;
 			

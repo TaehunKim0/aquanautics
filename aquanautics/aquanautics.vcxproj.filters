@@ -132,9 +132,6 @@
     <ClInclude Include="Urak.h">
       <Filter>Game\Unit\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="RedUrak.h">
-      <Filter>Game\Unit\Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="AddOnPlayer.h">
       <Filter>Game\Unit\Player</Filter>
     </ClInclude>
@@ -153,6 +150,10 @@
     <ClInclude Include="Label.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
+    <ClInclude Include="Eel.h">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBullet.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp">
@@ -243,9 +244,6 @@
     <ClCompile Include="Urak.cpp">
       <Filter>Game\Unit\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="RedUrak.cpp">
-      <Filter>Game\Unit\Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="AddOnPlayer.cpp">
       <Filter>Game\Unit\Player</Filter>
     </ClCompile>
@@ -264,5 +262,9 @@
     <ClCompile Include="Label.cpp">
       <Filter>FrameWork\Node2</Filter>
     </ClCompile>
+    <ClCompile Include="Eel.cpp">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBullet.cpp" />
   </ItemGroup>
 </Project>

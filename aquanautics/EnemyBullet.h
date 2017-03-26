@@ -1,23 +1,20 @@
 #pragma once
-class Urak : public Object
+class EnemyBullet : public Bullet
 {
 private:
-	Sprite* urak;
+	std::wstring tex;
+	Sprite *bullet;
 	Collision* m_collision;
 
-	int speed;
-	int lifeCount;
-
-	bool Cancollsion;
-
 public:
-	Urak();
-	~Urak();
+	EnemyBullet();
+	EnemyBullet(std::wstring text);
+	~EnemyBullet();
 
 	bool Initialize();
 	void Update(float deltaTime);
 	void Render();
 
 	void IsCollisionWith(Collision* other);
-
 };
+

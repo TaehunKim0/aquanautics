@@ -59,6 +59,8 @@ bool Player::Initialize()
 
 	return true;
 
+
+
 }
 
 void Player::Update(float deltaTime)
@@ -116,6 +118,8 @@ void Player::Update(float deltaTime)
 		}
 
 	}
+
+	
 }
 
 void Player::Render()
@@ -148,9 +152,6 @@ void Player::Attack()
 
 			BulletMgr::GetInstance()->RegisterBullet(bullet0);
 			BulletMgr::GetInstance()->Initialize();
-
-			PRINT(bullet0->Position.x);
-			PRINT(bullet0->Position.y);
 		}
 	
 		if (weapon->GetWeaponType() == WeaponType::tripletorpedo)
@@ -255,7 +256,8 @@ void Player::IsCollisionWith(Collision * other)
 			return;
 	}
 
-
+	if (other->Parent->Name == "enemybullet")
+		lifeCount--;
 
 }
 

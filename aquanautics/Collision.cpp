@@ -14,7 +14,7 @@ Collision::Collision(D3DXVECTOR3 center, float r , Object* parent)
 	Parent = parent;
 
 	CollisionMgr::GetInstance()->RegisterCollision(this);
-
+	printf("Collision Register \n");
 }
 
 Collision::~Collision()
@@ -28,6 +28,7 @@ bool Collision::Initialize()
 
 void Collision::Update(float deltaTime)
 {
+	Object::Update(deltaTime);
 }
 
 void Collision::Render()

@@ -1,8 +1,7 @@
 #include "stdafx.h"
 #include "EnemySpawner.h"
 #include"Urak.h"
-#include"RedUrak.h"
-
+#include"Eel.h"
 #include"Shark.h"
 #include"Kraken.h"
 
@@ -18,6 +17,9 @@ EnemySpawner::~EnemySpawner()
 bool EnemySpawner::Initialize()
 {
 	Object::Initialize();
+
+	for (auto a : enemyList)
+		a->Initialize();
 
 	return true;
 }
@@ -41,41 +43,36 @@ void EnemySpawner::Render()
 
 void EnemySpawner::SpawnEnemy(int x, int y)
 {
+	int r = 0;
 	srand(time(NULL));
-	int r = rand() % 1;
-
+	r = (rand() % 2) + 1;
 	switch (r)
 	{
-	case 0:
-		{
-		auto e = new Urak();
-		e->Initialize();
-
-		enemyList.push_back(e);
-
-		e->SetPostion(x, y);
-		break;
-		}
 	case 1:
 	{
-		auto e = new RedUrak();
+		auto e = new Urak();
 		e->Initialize();
-
 		enemyList.push_back(e);
-
 		e->SetPostion(x, y);
-		break;
 	}
+	break;
+
+	case 2:
+	{
+		auto e = new Eel();
+		e->Initialize();
+		enemyList.push_back(e);
+		e->SetPostion(x, y);
+	}
+	break;
 
 	default:
+		printf("Spawner Default\n");
 		break;
 	}
 
-
-
 	
-
-	printf("Spawn Enemy\n");
+	
 }
 
 void EnemySpawner::SpawnShark(int x, int y)
@@ -86,7 +83,6 @@ void EnemySpawner::SpawnShark(int x, int y)
 	enemyList.push_back(sh);
 
 	sh->SetPostion(x, y);
-
 }
 
 void EnemySpawner::SpawnKraken(int x, int y)

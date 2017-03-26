@@ -6,6 +6,8 @@ CollisionMgr::CollisionMgr()
 {
 	collisionList.reserve(10);
 	printf("CollisionMgr 积己 \n");
+
+	collisionList.clear();
 }
 
 
@@ -15,8 +17,6 @@ CollisionMgr::~CollisionMgr()
 
 bool CollisionMgr::Initialize()
 {
-
-
 	return true;
 }
 
@@ -27,11 +27,14 @@ void CollisionMgr::Update(float deltaTime)
 		{
 			if (a != b)
 			{
+				//printf("A Name : %s \n", a->Parent->Name.c_str());
+				//printf("B Name : %s \n", b->Parent->Name.c_str());
 				if (!(a->Parent->visible == false))
 				{
 					if (!(b->Parent->visible == false))
 						if (CircleCollide(a, b))
 						{
+							
 							a->IsCollide(b);
 							b->IsCollide(a);
 						}
@@ -39,19 +42,24 @@ void CollisionMgr::Update(float deltaTime)
 		
 			}
 		}
-		
+
 	/*for (auto a : collisionList)
 	{
+		if (a == false)
+			continue;
+
+		printf("Collision : %s\n", a->Parent->Name.c_str());
 		if (a->Parent->visible == false)
 		{
-			SAFE_DELETE(a->Parent);
 			std::vector<Collision*>::iterator iter = std::find(collisionList.begin(), collisionList.end(), a);
+			printf("面倒眉 : %s 昏力\n", a->Parent->Name.c_str());
 			collisionList.erase(iter);
 		}
 
 		else
 			printf("else\n");
-	}*/
+	}
+	*/
 
 	Object::Update(deltaTime);
 }
@@ -67,17 +75,23 @@ void CollisionMgr::RegisterCollision(Collision * collision)
 
 bool CollisionMgr::CircleCollide(Collision * a, Collision * b)
 {
-	float ax = a->Position.x + a->Center.x;
-	float ay = a->Position.y + a->Center.y;
+	float ax = a->Parent->Position.x + a->Center.x;
+	float ay = a->Parent->Position.y + a->Center.y;
 
-	float bx = b->Position.x + b->Center.x;
-	float by = b->Position.y +  b->Center.y;
+	float bx = b->Parent->Position.x + b->Center.x;
+	float by = b->Parent->Position.y + b->Center.y;
 
 	//printf("ax : %f\n", ax);
 	//printf("ay : %f\n", ay);
 
 	//printf("bx : %f\n", bx);
 	//printf("by : %f\n", by);
+
+	if (a->Parent->Name == "urak")
+	{
+		printf("Name : %s , X : %f, Y : %f\n", a->Parent->Name.c_str(), ax, ay);
+		printf("Name : %s , X : %f, Y : %f\n", b->Parent->Name.c_str(), ax, ay);
+	}
 
 	float ftemp = sqrt(pow(ax - bx, 2) + pow(ay - by, 2));
 

@@ -12,6 +12,8 @@ private:
 	ProgressRate* progress;
 	Label* label;
 
+	bool CanSpawn;
+
 public:
 	Stage1();
 	~Stage1();

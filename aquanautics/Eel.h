@@ -1,23 +1,24 @@
 #pragma once
-class RedUrak : public Object
+class Eel : public Object
 {
 private:
-	Sprite* redurak;
+	Sprite* eel;
 	Collision* m_collision;
 
 	int speed;
 	int lifeCount;
 
+	bool Cancollsion;
 
 public:
-	RedUrak();
-	~RedUrak();
+	Eel();
+	~Eel();
 
+	bool Initialize();
 	void Update(float deltaTime);
 	void Render();
-	bool Initialize();
 
-	void IsCollisionWith(Collision * other);
+	void IsCollisionWith(Collision* other);
 
 	void Attack();
 };

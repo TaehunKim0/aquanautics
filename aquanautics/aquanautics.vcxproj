@@ -162,6 +162,8 @@
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Director.h" />
+    <ClInclude Include="Eel.h" />
+    <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="EnemySpawner.h" />
     <ClInclude Include="GameTime.h" />
     <ClInclude Include="Input.h" />
@@ -176,7 +178,6 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMgr.h" />
     <ClInclude Include="ProgressRate.h" />
-    <ClInclude Include="RedUrak.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
@@ -201,6 +202,8 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Director.cpp" />
+    <ClCompile Include="Eel.cpp" />
+    <ClCompile Include="EnemyBullet.cpp" />
     <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -215,7 +218,6 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMgr.cpp" />
     <ClCompile Include="ProgressRate.cpp" />
-    <ClCompile Include="RedUrak.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceMgr.cpp" />
     <ClCompile Include="Scene.cpp" />
