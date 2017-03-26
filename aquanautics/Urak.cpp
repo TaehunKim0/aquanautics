@@ -58,4 +58,3 @@ void Urak::IsCollisionWith(Collision * collision)
 		lifeCount -= 1;
 	}
 }
-

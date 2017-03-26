@@ -43,6 +43,8 @@ void EnemySpawner::SpawnEnemy(int x, int y)
 	auto e = new Urak();
 	e->Initialize();
 
+
+
 	enemyList.push_back(e);
 
 	e->SetPostion(x, y);

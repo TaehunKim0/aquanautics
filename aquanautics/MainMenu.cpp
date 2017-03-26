@@ -24,8 +24,8 @@ bool MainMenu::Initialize()
 
 	menu->AutoNext = 0;
 	
-	menu->Position.x += 600;
-	menu->Position.y += 100;
+	menu->Position.x += 800;
+	menu->Position.y += 300;
 
 	howtoplay = new Sprite();
 	howtoplay->Initialize(L"Resources/Menu/howtoplay.png");

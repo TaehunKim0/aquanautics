@@ -34,6 +34,9 @@
     <Filter Include="Game\Unit\Enemy">
       <UniqueIdentifier>{d8d00c14-d812-4b7a-991f-384461331b5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Unit\Player">
+      <UniqueIdentifier>{36fcdf87-46d2-4b77-ba73-f4f842b62418}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -72,9 +75,6 @@
     <ClInclude Include="Stage1.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Game\Unit</Filter>
-    </ClInclude>
     <ClInclude Include="GameTime.h">
       <Filter>FrameWork\Node2</Filter>
     </ClInclude>
@@ -83,9 +83,6 @@
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>FrameWork\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="AddOnPlayer.h">
-      <Filter>Game\Unit</Filter>
     </ClInclude>
     <ClInclude Include="BackGround.h">
       <Filter>Game\Scene</Filter>
@@ -104,9 +101,6 @@
     </ClInclude>
     <ClInclude Include="ResourceMgr.h">
       <Filter>FrameWork\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemySpawner.h">
-      <Filter>Game\Unit</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>Game\Item</Filter>
@@ -136,6 +130,18 @@
       <Filter>Game\Unit\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Label.h" />
+    <ClInclude Include="RedUrak.h">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="AddOnPlayer.h">
+      <Filter>Game\Unit\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Unit\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemySpawner.h">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp">
@@ -172,9 +178,6 @@
     <ClCompile Include="Stage1.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Game\Unit</Filter>
-    </ClCompile>
     <ClCompile Include="GameTime.cpp">
       <Filter>FrameWork\Node2</Filter>
     </ClCompile>
@@ -183,9 +186,6 @@
     </ClCompile>
     <ClCompile Include="Collision.cpp">
       <Filter>FrameWork\Node</Filter>
-    </ClCompile>
-    <ClCompile Include="AddOnPlayer.cpp">
-      <Filter>Game\Unit</Filter>
     </ClCompile>
     <ClCompile Include="BackGround.cpp">
       <Filter>Game\Scene</Filter>
@@ -204,9 +204,6 @@
     </ClCompile>
     <ClCompile Include="ResourceMgr.cpp">
       <Filter>FrameWork\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemySpawner.cpp">
-      <Filter>Game\Unit</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>Game\Item</Filter>
@@ -236,5 +233,17 @@
       <Filter>Game\Unit\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="Label.cpp" />
+    <ClCompile Include="RedUrak.cpp">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="AddOnPlayer.cpp">
+      <Filter>Game\Unit\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Unit\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemySpawner.cpp">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
