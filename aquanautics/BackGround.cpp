@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "BackGround.h"
-
+#include"ProgressRate.h"
 
 BackGround::BackGround() : CanScroll(1)
 {
@@ -36,6 +36,8 @@ void BackGround::Update(float deltaTime)
 
 	if (CanScroll)
 		Scrolling();
+		
+		
 }
 
 void BackGround::Render()

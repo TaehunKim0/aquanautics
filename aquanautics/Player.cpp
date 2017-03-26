@@ -218,6 +218,13 @@ void Player::IsCollisionWith(Collision * other)
 			lifeCount--;
 			Cancollision = 0;
 		}
+
+		if (other->Parent->Name == "shark")
+		{
+			lifeCount--;
+			Cancollision = 0;
+		}
+
 	}
 
 	if (other->Parent->Name == "addonplayer")
@@ -247,6 +254,8 @@ void Player::IsCollisionWith(Collision * other)
 		else
 			return;
 	}
+
+
 
 }
 

@@ -30,7 +30,7 @@ void ProgressRate::Update(float deltaTime)
 	if (!(middleBoss | lastBoss))
 	{
 		if (GameTime::TotalFrame % 10 == 0)
-			progress->Position.x += 5;
+			progress->Position.x += 1;
 	}
 	
 	if (progress->Position.x == 610)

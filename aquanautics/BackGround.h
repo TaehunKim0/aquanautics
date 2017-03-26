@@ -5,8 +5,7 @@ private:
 	Sprite *back;
 	Sprite* back2;
 
-	bool CanScroll;
-
+	
 
 public:
 	BackGround();
@@ -15,7 +14,7 @@ public:
 	bool Initialize();
 	void Update(float deltaTime);
 	void Render();
-
+	bool CanScroll;
 	void SetBackGround(std::wstring fileName);
 	void Scrolling();
 };

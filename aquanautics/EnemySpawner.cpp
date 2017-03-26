@@ -80,6 +80,13 @@ void EnemySpawner::SpawnEnemy(int x, int y)
 
 void EnemySpawner::SpawnShark(int x, int y)
 {
+	auto sh = new Shark();
+	sh->Initialize();
+
+	enemyList.push_back(sh);
+
+	sh->SetPostion(x, y);
+
 }
 
 void EnemySpawner::SpawnKraken(int x, int y)

@@ -60,7 +60,7 @@ void Application::Run()
 			if (GameTime::CurrentFrame > 60)
 				GameTime::CurrentFrame = 0;
 
-			
+			//printf("Total Frame : %d\n", GameTime::TotalFrame);
 		}
 	}
 

@@ -44,18 +44,35 @@ void Stage1::Release()
 	printf("Scene : Stage1 Release\n");
 }
 
+bool a = 0;
+
 void Stage1::Update(float deltaTime)
 {
 	Scene::Update(deltaTime);
 
-	if (GameTime::TotalFrame == 100)
-		EnemySpawner::GetInstance()->SpawnEnemy(900, 250);
 
 
-	//if (Input::IsKeyDown(VK_F4))
-	//	Director::GetInstance()->LoadScene(new MainMenu());
 
-	//printf("///\n");
+
+
+	if (progress->middleBoss)
+	{
+		background->CanScroll = false;
+
+		if (!a)
+			EnemySpawner::GetInstance()->SpawnShark(1000, 250);
+		a = 1;
+	}
+
+	if (progress->lastBoss)
+	{
+		background->CanScroll = false;
+		a = 0;
+
+		if (!a)
+			EnemySpawner::GetInstance()->SpawnKraken(1000, 250);
+		a = 1;
+	}
 
 }
 
