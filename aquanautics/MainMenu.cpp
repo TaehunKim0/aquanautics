@@ -9,6 +9,7 @@ MainMenu::MainMenu() : menuIndex(0)
 
 MainMenu::~MainMenu()
 {
+	printf("Menu Release\n");
 }
 
 bool MainMenu::Initialize()

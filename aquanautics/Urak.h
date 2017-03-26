@@ -7,6 +7,9 @@ private:
 
 	int speed;
 	int lifeCount;
+
+	bool Cancollsion;
+
 public:
 	Urak();
 	~Urak();

@@ -4,7 +4,7 @@
 
 Object::Object(std::string name) : Name(name), Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f) ,visible(1) ,id(0)
 {
-	printf("Object %s 积己凳\n", Name.c_str());
+	//printf("Object %s 积己凳\n", Name.c_str());
 }
 
 

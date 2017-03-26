@@ -7,6 +7,8 @@ Item::Item(int x, int y)
 	SetPostion(x, y);
 
 	ItemMgr::GetInstance()->RegisterItem(this);
+
+	id = 1;
 }
 
 
@@ -31,13 +33,13 @@ void Item::Render()
 
 bool Item::Initialize()
 {
-	int ra = 10;
-	//srand(time(NULL));
-	//ra = (rand() % 5) + 1;
+	int ra = 0;
+	srand(time(NULL));
+	ra = (rand() % 5) + 1;
 
 	switch (ra)
 	{
-	case 0: //애드온 플레이어
+	case 0: //애드온 플레이어0
 	{
 		auto sprite = Sprite::Create(L"Resources/Item/addonplayer.png");
 		AddChild(sprite);
@@ -47,7 +49,7 @@ bool Item::Initialize()
 	}
 	
 		break;
-	case 1: //3 방향
+	case 1: //3 방향0
 	{
 		auto sprite = Sprite::Create(L"Resources/Item/tripletorpedo.png");
 		AddChild(sprite);
@@ -77,7 +79,7 @@ bool Item::Initialize()
 	}
 		break;
 
-	case 4: //회복
+	case 4: //회복0
 	{
 		auto sprite = Sprite::Create(L"Resources/Item/recovery.png");
 		AddChild(sprite);
@@ -87,7 +89,7 @@ bool Item::Initialize()
 	}
 		break;
 
-	case 5: //스피드업
+	case 5: //스피드업0
 	{
 		auto sprite = Sprite::Create(L"Resources/Item/speedup.png");
 		AddChild(sprite);
@@ -102,7 +104,7 @@ bool Item::Initialize()
 
 	}
 
-	
+	printf("Item : %s 생성\n", Name);
 
 	return true;
 }
@@ -110,5 +112,10 @@ bool Item::Initialize()
 void Item::IsCollisionWith(Collision * other)
 {
 	if (other->Parent->Name == "player")
+	{
 		this->visible = false;
+
+		printf("Player Collision - item\n");
+	}
+
 }

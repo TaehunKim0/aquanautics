@@ -168,6 +168,7 @@
     <ClInclude Include="Intro.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemMgr.h" />
+    <ClInclude Include="Kraken.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Misille.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Shark.h" />
     <ClInclude Include="SingleTon.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Stage1.h" />
@@ -205,6 +207,7 @@
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemMgr.cpp" />
+    <ClCompile Include="Kraken.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Misille.cpp" />
@@ -216,6 +219,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceMgr.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Shark.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="stdafx.cpp">

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Stage1.h"
 #include"Urak.h"
+#include"MainMenu.h"
 
 Stage1::Stage1()
 {
@@ -20,7 +21,7 @@ bool Stage1::Initialize()
 	progress = new ProgressRate();
 	//label = new Label();
 
-	/*AddChild(background);
+	AddChild(background);
 	AddChild(player);
 	AddChild(BulletMgr::GetInstance());
 
@@ -28,7 +29,7 @@ bool Stage1::Initialize()
 	AddChild(CollisionMgr::GetInstance());
 	AddChild(ItemMgr::GetInstance());
 	AddChild(progress);
-	*/
+	
 
 	//AddChild(label);
 
@@ -40,6 +41,7 @@ bool Stage1::Initialize()
 void Stage1::Release()
 {
 	Scene::Release();
+	printf("Scene : Stage1 Release\n");
 }
 
 void Stage1::Update(float deltaTime)
@@ -49,9 +51,12 @@ void Stage1::Update(float deltaTime)
 	if (GameTime::TotalFrame == 100)
 		EnemySpawner::GetInstance()->SpawnEnemy(900, 250);
 
-	
+
+	//if (Input::IsKeyDown(VK_F4))
+	//	Director::GetInstance()->LoadScene(new MainMenu());
 
 	//printf("///\n");
+
 }
 
 void Stage1::Render()

@@ -37,6 +37,9 @@
     <Filter Include="Game\Unit\Player">
       <UniqueIdentifier>{36fcdf87-46d2-4b77-ba73-f4f842b62418}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Obstacles">
+      <UniqueIdentifier>{0cb00e91-8656-4b50-b265-0b8b41d6f117}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -129,7 +132,6 @@
     <ClInclude Include="Urak.h">
       <Filter>Game\Unit\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Label.h" />
     <ClInclude Include="RedUrak.h">
       <Filter>Game\Unit\Enemy</Filter>
     </ClInclude>
@@ -141,6 +143,15 @@
     </ClInclude>
     <ClInclude Include="EnemySpawner.h">
       <Filter>Game\Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Kraken.h">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Shark.h">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Label.h">
+      <Filter>FrameWork\Node2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -232,7 +243,6 @@
     <ClCompile Include="Urak.cpp">
       <Filter>Game\Unit\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Label.cpp" />
     <ClCompile Include="RedUrak.cpp">
       <Filter>Game\Unit\Enemy</Filter>
     </ClCompile>
@@ -244,6 +254,15 @@
     </ClCompile>
     <ClCompile Include="EnemySpawner.cpp">
       <Filter>Game\Unit\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Kraken.cpp">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Shark.cpp">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Label.cpp">
+      <Filter>FrameWork\Node2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

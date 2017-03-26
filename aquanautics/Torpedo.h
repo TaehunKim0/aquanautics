@@ -6,8 +6,13 @@ private:
 	Sprite* bullet;
 	Collision* m_collision;
 
+	std::wstring tt;
+
+	bool IsTexted;
+
 public:
 	Torpedo();
+	Torpedo(std::wstring texture);
 	~Torpedo();
 
 	bool Initialize();
@@ -15,5 +20,7 @@ public:
 	void Render();
 
 	void IsCollisionWith(Collision* other);
+
+	void SetTorpedoTexture(std::wstring texture);
 };
 

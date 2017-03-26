@@ -5,6 +5,7 @@
 BulletMgr::BulletMgr()
 {
 	printf("BulletMgr »ý¼º\n");
+	bulletList.reserve(100);
 }
 
 
@@ -14,7 +15,6 @@ BulletMgr::~BulletMgr()
 
 bool BulletMgr::Initialize()
 {
-	bulletList.reserve(10);
 	for (auto b : bulletList)
 		b->Initialize();
 

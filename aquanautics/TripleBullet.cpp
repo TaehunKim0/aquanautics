@@ -24,7 +24,6 @@ bool TripleBullet::Initialize()
 	bullet->Initialize(L"Resources/Player/p_torpedo.png");
 	AddChild(bullet);
 
-	printf("Triple Bullet »ý¼º\n");
 	m_collision = new Collision(bullet->Center, 30, this);
 
 	AddChild(bullet);
@@ -46,8 +45,10 @@ void TripleBullet::Render()
 	Object::Render();
 }
 
-void TripleBullet::IsCollisionWith(Collision * collision)
+void TripleBullet::IsCollisionWith(Collision * other)
 {
-	if (collision)
+	if ((other->Parent->Name =="player"))
+	{
 		bullet->visible = false;
+	}
 }

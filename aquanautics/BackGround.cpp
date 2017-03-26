@@ -9,6 +9,10 @@ BackGround::BackGround() : CanScroll(1)
 
 BackGround::~BackGround()
 {
+	printf("BackGround Realse\n");
+
+	SAFE_RELEASE(back);
+	SAFE_RELEASE(back2);
 }
 
 bool BackGround::Initialize()

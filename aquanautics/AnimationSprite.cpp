@@ -32,6 +32,12 @@ void AnimationSprite::NextFrame()
 		currentFrame = 0;
 }
 
+Sprite * AnimationSprite::GetCurrentFrame()
+{
+	auto sprite = spriteList.at(currentFrame);
+	return sprite;
+}
+
 void AnimationSprite::Update(float deltaTime)
 {
 	Object::Update(deltaTime);

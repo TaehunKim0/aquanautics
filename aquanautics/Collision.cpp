@@ -15,7 +15,6 @@ Collision::Collision(D3DXVECTOR3 center, float r , Object* parent)
 
 	CollisionMgr::GetInstance()->RegisterCollision(this);
 
-	printf("Collision µî·Ï\n");
 }
 
 Collision::~Collision()

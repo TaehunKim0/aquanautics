@@ -3,10 +3,12 @@ class Bullet;
 class AnimationSprite;
 class Weapon;
 class AddOnPlayer;
+
+class Director;
 class Player : public Object
 {
 private:
-	Sprite* player;
+	AnimationSprite* player;
 	AnimationSprite* life;
 	AnimationSprite* nuclear;
 	//AddOnPlayer* add;
@@ -27,9 +29,13 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
+	void Release();
+
 	void Attack();
 	void Move();
 	void IsCollisionWith(Collision* other);
 	
 	int IsAddOnPlayer;
+
+	void Cheat();
 };

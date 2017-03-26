@@ -9,6 +9,10 @@ AddOnPlayer::AddOnPlayer()
 
 AddOnPlayer::~AddOnPlayer()
 {
+	printf("AddOnPlayer Release\n");
+
+	SAFE_RELEASE(addonplayer);
+
 }
 
 bool AddOnPlayer::Initialize()
@@ -49,14 +53,23 @@ void AddOnPlayer::Render()
 
 void AddOnPlayer::Attack()
 {
-	auto bullet = new Torpedo();
+	auto bullet = new Torpedo(L"Resources/AddOnPlayer/add1bullet.png");
 	bullet->Initialize();
-	PRINT(player->IsAddOnPlayer);
+
+	bullet->Position.x = (this->Parent->Position.x);
+	bullet->Position.y = (this->Parent->Position.y);
+
+	BulletMgr::GetInstance()->RegisterBullet(bullet);
+	BulletMgr::GetInstance()->Initialize();
+
+
 
 	if (player->IsAddOnPlayer == 2)
 	{
-		auto bullet1 = new Torpedo();
+		auto bullet1 = new Torpedo(L"Resources/AddOnPlayer/add2bullet.png");
 		bullet1->Initialize();
+
+		printf("2222");
 
 		bullet1->Position.x = (this->Parent->Position.x + 50);
 		bullet1->Position.y = (this->Parent->Position.y + 130);
@@ -66,9 +79,4 @@ void AddOnPlayer::Attack()
 
 	}
 
-	bullet->Position.x = (this->Parent->Position.x);
-	bullet->Position.y = (this->Parent->Position.y);
-
-	BulletMgr::GetInstance()->RegisterBullet(bullet);
-	BulletMgr::GetInstance()->Initialize();
 }

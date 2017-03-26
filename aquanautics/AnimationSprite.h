@@ -19,6 +19,9 @@ public:
 	void NextFrame();
 
 	bool AutoNext;
+
+	Sprite* GetCurrentFrame();
+
 	int currentFrame;
 	void Update(float deltaTime);
 	void Render();

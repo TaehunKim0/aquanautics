@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "EnemySpawner.h"
 #include"Urak.h"
+#include"RedUrak.h"
+
+#include"Shark.h"
+#include"Kraken.h"
 
 EnemySpawner::EnemySpawner()
 {
@@ -38,16 +42,46 @@ void EnemySpawner::Render()
 void EnemySpawner::SpawnEnemy(int x, int y)
 {
 	srand(time(NULL));
-	int r = rand() % 2;
+	int r = rand() % 1;
 
-	auto e = new Urak();
-	e->Initialize();
+	switch (r)
+	{
+	case 0:
+		{
+		auto e = new Urak();
+		e->Initialize();
+
+		enemyList.push_back(e);
+
+		e->SetPostion(x, y);
+		break;
+		}
+	case 1:
+	{
+		auto e = new RedUrak();
+		e->Initialize();
+
+		enemyList.push_back(e);
+
+		e->SetPostion(x, y);
+		break;
+	}
+
+	default:
+		break;
+	}
 
 
 
-	enemyList.push_back(e);
-
-	e->SetPostion(x, y);
+	
 
 	printf("Spawn Enemy\n");
+}
+
+void EnemySpawner::SpawnShark(int x, int y)
+{
+}
+
+void EnemySpawner::SpawnKraken(int x, int y)
+{
 }

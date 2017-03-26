@@ -13,17 +13,14 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	AllocConsole();
 	FILE* stream;
 	freopen_s(&stream, "CON", "w", stdout);
-#endif
-	
 
+#endif
 	if (Application::GetInstance()->Initialize(WINDOW_TITLE, WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_MODE))
 	{
 		Director::GetInstance()->LoadScene(new MainMenu());
 
 		Application::GetInstance()->Run();
 		Application::GetInstance()->Release();
-
-
 	}
 
 #if _DEBUG

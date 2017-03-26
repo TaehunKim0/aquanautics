@@ -19,6 +19,6 @@ public:
 	int deathTime;
 	float radius;
 
-	void IsCollisionWith(Collision* collision);
+	void IsCollisionWith(Collision* other);
 };
 

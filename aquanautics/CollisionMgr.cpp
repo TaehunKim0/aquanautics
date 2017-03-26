@@ -27,16 +27,19 @@ void CollisionMgr::Update(float deltaTime)
 		{
 			if (a != b)
 			{
-				if (CircleCollide(a, b))
+				if (!(a->Parent->visible == false))
 				{
-					a->IsCollide(b);
-					b->IsCollide(a);
+					if (!(b->Parent->visible == false))
+						if (CircleCollide(a, b))
+						{
+							a->IsCollide(b);
+							b->IsCollide(a);
+						}
 				}
+		
 			}
-				
 		}
 		
-
 	/*for (auto a : collisionList)
 	{
 		if (a->Parent->visible == false)

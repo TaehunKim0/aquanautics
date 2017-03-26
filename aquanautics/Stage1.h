@@ -1,6 +1,7 @@
 #pragma once
 class Urak;
 class Label;
+class MainMenu;
 class Stage1 : public Scene
 {
 private:

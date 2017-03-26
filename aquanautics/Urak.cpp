@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Urak.h"
 
-Urak::Urak() : speed(3) , lifeCount(1)
+Urak::Urak() : speed(3) , lifeCount(1), Cancollsion(1)
 {
 	Name = "urak";
 	id = 123;
@@ -14,12 +14,39 @@ Urak::~Urak()
 
 bool Urak::Initialize()
 {
-	urak = new Sprite();
-	urak->Initialize(L"Resources/Mob/urak.png");
+	int r = 0;
+	srand(time(NULL));
+	r = (rand() % 2 )+1;
 
-	m_collision = new Collision(urak->Center, 30, this);
+	switch (r)
+	{
+	case 1:
+	{
+		urak = new Sprite();
+		urak->Initialize(L"Resources/Mob/urak.png");
 
-	AddChild(urak);
+		m_collision = new Collision(urak->Center, 30, this);
+
+		AddChild(urak);
+	}
+		break;
+
+	case 2:
+	{
+		urak = new Sprite();
+		urak->Initialize(L"Resources/Mob/redurak.png");
+
+		m_collision = new Collision(urak->Center, 30, this);
+
+		AddChild(urak);
+	}
+		break;
+
+	default:
+		printf("Urak Default\n");
+		break;
+	}
+
 
 	return true;
 }
@@ -38,12 +65,16 @@ void Urak::Update(float deltaTime)
 
 	if (lifeCount <= 0)
 	{
-		urak->visible = false;
+		visible = false;
 
 		auto i = new Item(Position.x , Position.y);
 		i->Initialize();
+
 	}
+
 	lifeCount = 1;
+
+	Position.x -= speed;
 }
 
 void Urak::Render()
@@ -53,8 +84,13 @@ void Urak::Render()
 
 void Urak::IsCollisionWith(Collision * collision)
 {
-	if (collision->Parent->Name == "torpedo")
-	{
-		lifeCount -= 1;
-	}
+	//if(Cancollsion)
+		if (collision->Parent->Name == "torpedo")
+		{
+			lifeCount -= 1;
+			
+			printf("Torpedo Collision - urak\n");
+			//Cancollsion = 0;
+			return;
+		}
 }
