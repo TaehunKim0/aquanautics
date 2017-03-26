@@ -8,7 +8,11 @@ private:
 	int menuIndex;
 
 	Sprite* howtoplay;
-	
+	Sprite* introduce;
+	Sprite* ranking;
+	Sprite* credit;
+
+
 public:
 	MainMenu();
 	~MainMenu();

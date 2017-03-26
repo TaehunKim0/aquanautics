@@ -1,5 +1,6 @@
 #pragma once
 class Urak;
+class Label;
 class Stage1 : public Scene
 {
 private:
@@ -8,6 +9,7 @@ private:
 	BackGround* background;
 	Urak* urak;
 	ProgressRate* progress;
+	Label* label;
 
 public:
 	Stage1();

@@ -28,13 +28,32 @@ bool MainMenu::Initialize()
 	menu->Position.y += 100;
 
 	howtoplay = new Sprite();
-	howtoplay->Initialize(L"Resources/UI/Menu/howtoplays.png");
+	howtoplay->Initialize(L"Resources/Menu/howtoplay.png");
+
+	introduce = new Sprite();
+	introduce->Initialize(L"Resources/Menu/introduce.png");
+
+	ranking = new Sprite();
+	ranking->Initialize(L"Resources/Menu/ranking.png");
+
+	credit = new Sprite();
+	credit->Initialize(L"Resources/Menu/credit.png");
 
 	AddChild(Sprite::Create(L"Resources/Map/menu.png"));
+
 	AddChild(menu);
 	AddChild(howtoplay);
+	AddChild(introduce);
+	AddChild(ranking);
+	AddChild(credit);
+
 
 	howtoplay->visible = false;
+	introduce->visible = false;
+	ranking->visible = false;
+	credit->visible = false;
+
+
 
 	Scene::Initialize();
 
@@ -49,12 +68,6 @@ void MainMenu::Release()
 
 void MainMenu::Update(float deltaTime)
 {
-	printf("CurrentFrame : %d \n", menu->currentFrame);
-	printf("GameTime :  %d \n", GameTime::TotalFrame);
-	printf("AutoNext : %d \n", menu->AutoNext);
-
-	//printf("Menu index : %d \n", menuIndex);
-
 	Scene::Update(deltaTime);
 
 	menuIndex = min(max(menuIndex, 0), 4);
@@ -114,28 +127,51 @@ void MainMenu::Update(float deltaTime)
 
 			case 1://게임방법
 				howtoplay->visible = true;
+				
 				break;
 
 			case 2://랭킹
+				ranking->visible = true;
 
 				break;
 
 			case 3://크레딧
-
+				credit->visible = true;
 				break;
 
 			case 4://게임소개
+				introduce->visible = true;
 
-
+				break;
 			case 5:
+				introduce->visible = true;
+				break;
 
+			default:
+				printf("Menu Default\n");
 				break;
 			}
 		}
 	}
 
 	if (Input::IsKeyDown('M'))
-		Director::GetInstance()->LoadScene(new MainMenu());
+	{
+		//Director::GetInstance()->LoadScene(new MainMenu());
+
+		if (howtoplay->visible)
+			howtoplay->visible = false;
+
+		if (introduce->visible)
+			introduce->visible = false;
+
+		if (ranking->visible)
+			ranking->visible = false;
+
+		if (credit->visible)
+			credit->visible = false;
+
+	}
+		
 	
 }
 

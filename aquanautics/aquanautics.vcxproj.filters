@@ -135,6 +135,7 @@
     <ClInclude Include="Urak.h">
       <Filter>Game\Unit\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="Label.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp">
@@ -234,5 +235,6 @@
     <ClCompile Include="Urak.cpp">
       <Filter>Game\Unit\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Label.cpp" />
   </ItemGroup>
 </Project>

@@ -17,16 +17,19 @@ bool Stage1::Initialize()
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new BackGround();
 	progress = new ProgressRate();
+	//label = new Label();
 
-	AddChild(background);
-	AddChild(player);
-	AddChild(BulletMgr::GetInstance());
 
-	AddChild(EnemySpawner::GetInstance());
-	AddChild(CollisionMgr::GetInstance());
-	AddChild(ItemMgr::GetInstance());
-	AddChild(progress);
+	//AddChild(background);
+	//AddChild(player);
+	//AddChild(BulletMgr::GetInstance());
 
+	//AddChild(EnemySpawner::GetInstance());
+	//AddChild(CollisionMgr::GetInstance());
+	//AddChild(ItemMgr::GetInstance());
+	//AddChild(progress);
+
+	//AddChild(label);
 	Scene::Initialize();
 
 	return true;

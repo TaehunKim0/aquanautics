@@ -168,6 +168,7 @@
     <ClInclude Include="Intro.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemMgr.h" />
+    <ClInclude Include="Label.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Misille.h" />
     <ClInclude Include="Object.h" />
@@ -203,6 +204,7 @@
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemMgr.cpp" />
+    <ClCompile Include="Label.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Misille.cpp" />
     <ClCompile Include="Object.cpp" />
