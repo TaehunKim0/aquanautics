@@ -9,7 +9,7 @@ private:
 	int lifeCount;
 
 	bool Cancollsion;
-
+	int r;
 public:
 	Eel();
 	~Eel();

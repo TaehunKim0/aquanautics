@@ -94,9 +94,9 @@ void Stage1::Update(float deltaTime)
 	{
 		background->CanScroll = false;
 
-		if (!a)
-			EnemySpawner::GetInstance()->SpawnShark(1000, 250);
-		a = 1;
+		//if (!a)
+		//	EnemySpawner::GetInstance()->SpawnShark(1000, 250);
+		//a = 1;
 
 		CanSpawn = 0;
 	}
@@ -104,10 +104,10 @@ void Stage1::Update(float deltaTime)
 	if (progress->lastBoss)
 	{
 		background->CanScroll = false;
-		a = 0;
+	//	a = 0;
 
-		if (!a)
-			EnemySpawner::GetInstance()->SpawnKraken(1000, 250);
+		//if (!a)
+		//	EnemySpawner::GetInstance()->SpawnKraken(1000, 250);
 		a = 1;
 
 		CanSpawn = 0;

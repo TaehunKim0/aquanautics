@@ -53,4 +53,3 @@
 #include"ProgressRate.h"
 #include"Bullet.h"
 #include"AddOnPlayer.h"
-#include"Label.h"
