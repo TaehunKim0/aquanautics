@@ -11,7 +11,6 @@ Shark::~Shark()
 {
 }
 
-
 bool Shark::Initialize()
 {
 	shark = new Sprite();
