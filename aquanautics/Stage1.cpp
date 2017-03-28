@@ -54,7 +54,7 @@ void Stage1::Update(float deltaTime)
 	Scene::Update(deltaTime);
 	
 	if(CanSpawn)
-		if (GameTime::TotalFrame % 120 == 0)
+		if (GameTime::TotalFrame % 180 ==0)
 		{
 			srand(time(NULL));
 			int y = 0;
@@ -81,8 +81,8 @@ void Stage1::Update(float deltaTime)
 			
 			//printf("y: %d\n", y);
 
-			EnemySpawner::GetInstance()->SpawnEnemy(1300, y);
-
+			EnemySpawner::GetInstance()->SpawnEnemy(1000, y);
+			
 
 		}
 		

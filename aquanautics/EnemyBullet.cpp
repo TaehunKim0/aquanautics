@@ -31,7 +31,7 @@ void EnemyBullet::Update(float deltaTime)
 {
 	Object::Update(deltaTime);
 
-	Position.x -= 3;
+	Position.x -= 7;
 }
 
 void EnemyBullet::Render()

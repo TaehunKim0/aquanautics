@@ -27,19 +27,15 @@ void CollisionMgr::Update(float deltaTime)
 		{
 			if (a != b)
 			{
-				//printf("A Name : %s \n", a->Parent->Name.c_str());
-				//printf("B Name : %s \n", b->Parent->Name.c_str());
 				if (!(a->Parent->visible == false))
 				{
 					if (!(b->Parent->visible == false))
 						if (CircleCollide(a, b))
 						{
-							
 							a->IsCollide(b);
 							b->IsCollide(a);
 						}
-				}
-		
+					}
 			}
 		}
 
@@ -75,11 +71,11 @@ void CollisionMgr::RegisterCollision(Collision * collision)
 
 bool CollisionMgr::CircleCollide(Collision * a, Collision * b)
 {
-	float ax = a->Parent->Position.x + a->Center.x;
-	float ay = a->Parent->Position.y + a->Center.y;
+	float ax = a->Parent->Position.x; //+ a->Center.x;
+	float ay = a->Parent->Position.y;// +a->Center.y;
 
-	float bx = b->Parent->Position.x + b->Center.x;
-	float by = b->Parent->Position.y + b->Center.y;
+	float bx = b->Parent->Position.x;// +b->Center.x;
+	float by = b->Parent->Position.y;// +b->Center.y;
 
 	//printf("ax : %f\n", ax);
 	//printf("ay : %f\n", ay);
@@ -89,8 +85,8 @@ bool CollisionMgr::CircleCollide(Collision * a, Collision * b)
 
 	if (a->Parent->Name == "urak")
 	{
-		printf("Name : %s , X : %f, Y : %f\n", a->Parent->Name.c_str(), ax, ay);
-		printf("Name : %s , X : %f, Y : %f\n", b->Parent->Name.c_str(), ax, ay);
+		//printf("Name : %s , X : %f, Y : %f\n", a->Parent->Name.c_str(), ax, ay);
+		//printf("Name : %s , X : %f, Y : %f\n", b->Parent->Name.c_str(), ax, ay);
 	}
 
 	float ftemp = sqrt(pow(ax - bx, 2) + pow(ay - by, 2));

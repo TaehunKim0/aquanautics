@@ -9,7 +9,6 @@ Sprite::Sprite()
 {
 }
 
-
 Sprite::~Sprite()
 {
 }

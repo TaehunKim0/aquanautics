@@ -104,7 +104,7 @@ bool Item::Initialize()
 
 	}
 
-	printf("Item : %s 持失\n", Name);
+	//printf("Item : %s 持失\n", Name);
 
 	return true;
 }
