@@ -83,7 +83,6 @@ void Stage1::Update(float deltaTime)
 
 			EnemySpawner::GetInstance()->SpawnEnemy(1300, y);
 
-
 		}
 		
 

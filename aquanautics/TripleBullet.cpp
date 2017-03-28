@@ -14,8 +14,6 @@ TripleBullet::~TripleBullet()
 TripleBullet::TripleBullet(float radius) : radius(0)
 {
 	this->radius = radius * 3.14 / 180;
-
-
 }
 
 bool TripleBullet::Initialize()

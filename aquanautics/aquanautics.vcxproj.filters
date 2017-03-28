@@ -153,7 +153,10 @@
     <ClInclude Include="Eel.h">
       <Filter>Game\Unit\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyBullet.h" />
+    <ClInclude Include="EnemyBullet.h">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Hydra.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp">
@@ -265,6 +268,9 @@
     <ClCompile Include="Eel.cpp">
       <Filter>Game\Unit\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyBullet.cpp" />
+    <ClCompile Include="EnemyBullet.cpp">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Hydra.cpp" />
   </ItemGroup>
 </Project>

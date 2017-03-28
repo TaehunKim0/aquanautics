@@ -166,6 +166,7 @@
     <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="EnemySpawner.h" />
     <ClInclude Include="GameTime.h" />
+    <ClInclude Include="Hydra.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Intro.h" />
     <ClInclude Include="Item.h" />
@@ -206,6 +207,7 @@
     <ClCompile Include="EnemyBullet.cpp" />
     <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="GameTime.cpp" />
+    <ClCompile Include="Hydra.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="Item.cpp" />
