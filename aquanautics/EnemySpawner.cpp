@@ -43,9 +43,9 @@ void EnemySpawner::Render()
 
 void EnemySpawner::SpawnEnemy(int x, int y)
 {
-	int r = 0;
 	srand(time(NULL));
-	r = (rand() % 2) + 1;
+	auto r = (rand() % 2) + 1;
+	printf("R : %d\n", r);
 	switch (r)
 	{
 	case 1:

@@ -5,6 +5,8 @@
 TripleBullet::TripleBullet()
 {
 	Name = "triplebullet";
+
+	printf("tripleTorpedo »ý¼º\n");
 }
 
 TripleBullet::~TripleBullet()

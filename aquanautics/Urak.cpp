@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Urak.h"
 
-Urak::Urak() : speed(3) , lifeCount(3), Cancollsion(1)
+Urak::Urak() : speed(3) , lifeCount(3), Cancollsion(0)
 {
 	
 	id = 123;
@@ -42,7 +42,7 @@ bool Urak::Initialize()
 		break;
 	}
 
-	m_collision = new Collision(urak->Center, 30, this);
+	m_collision = new Collision(urak->Center, 60, this);
 
 	AddChild(urak);
 
@@ -64,18 +64,21 @@ void Urak::Update(float deltaTime)
 
 	m_collision->SetPostion(Position.x, Position.y);
 
-	if (lifeCount <= 0)
+	printf("urak collision X :%f Y :%f\n", m_collision->Position.x, m_collision->Position.y);
+	if (lifeCount == 0)
 	{
-		visible = false;
-
-		auto i = new Item(Position.x , Position.y);
+		auto i = new Item(Position.x, Position.y);
 		i->Initialize();
+
+		visible = 0;
+		lifeCount--;
 	}
 
-	Position.x -= 3;
+	//Position.x -= 3;
 
 	if (Position.x < 0)
 		visible = false;
+
 }
 
 void Urak::Render()

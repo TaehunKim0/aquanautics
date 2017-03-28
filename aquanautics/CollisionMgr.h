@@ -4,7 +4,6 @@ class CollisionMgr : public Object , public SingleTon<CollisionMgr>
 private:
 	std::vector<Collision*> collisionList;
 
-
 public:
 	CollisionMgr();
 	~CollisionMgr();

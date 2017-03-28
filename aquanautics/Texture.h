@@ -1,6 +1,5 @@
 #pragma once
 
-
 class Texture
 {
 public:
@@ -16,4 +15,3 @@ public:
 
 	void Release();
 };
-

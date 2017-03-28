@@ -17,4 +17,3 @@ public:
 
 	void IsCollisionWith(Collision* other);
 };
-

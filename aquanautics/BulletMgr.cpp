@@ -8,7 +8,6 @@ BulletMgr::BulletMgr()
 	bulletList.reserve(100);
 }
 
-
 BulletMgr::~BulletMgr()
 {
 }
@@ -29,8 +28,8 @@ void BulletMgr::Update(float deltaTime)
 
 		if (b->LifeTime == b->deathTime)
 		{
-			//std::vector<Bullet*>::iterator iter = std::find(bulletList.begin(), bulletList.end(), b);
-			//bulletList.erase(iter);
+			std::vector<Bullet*>::iterator iter = std::find(bulletList.begin(), bulletList.end(), b);
+			bulletList.erase(iter);
 		}
 	}
 }

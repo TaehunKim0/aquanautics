@@ -6,6 +6,8 @@ Torpedo::Torpedo()
 	bullet = nullptr;
 
 	IsTexted = 1;
+
+	printf("torpedo »ý¼º\n");
 }
 
 Torpedo::Torpedo(std::wstring texture)
@@ -74,10 +76,8 @@ void Torpedo::Render()
 
 void Torpedo::IsCollisionWith(Collision * other)
 {
-	if (!(other->Parent->Name == "player"))
+	if ((other->Parent->Name == "player"))
 	{
-		visible = false;
-
 		printf("Bullet - Player Collsion\n");
 	}
 

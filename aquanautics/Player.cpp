@@ -25,7 +25,7 @@ bool Player::Initialize()
 	player->AutoNext = false;
 	player->SetCurrentFrame(0);
 
-	m_collision = new Collision(this->player->Center, 100, this);
+	m_collision = new Collision(this->player->Center, 150, this);
 
 	//
 	life = new AnimationSprite(4, 10);
@@ -110,7 +110,7 @@ void Player::Update(float deltaTime)
 
 		collisionTime++;
 
-		if (collisionTime == 360)
+		if (collisionTime == 60)
 		{
 			Cancollision = true;
 			collisionTime = 0;
@@ -156,6 +156,13 @@ void Player::Attack()
 	
 		if (weapon->GetWeaponType() == WeaponType::tripletorpedo)
 		{
+			auto bullet2 = new Torpedo();
+			bullet2->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
+			bullet2->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
+
+			BulletMgr::GetInstance()->RegisterBullet(bullet2);
+			BulletMgr::GetInstance()->Initialize();
+
 			auto bullet = new TripleBullet(30.0f);
 			bullet->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
 			bullet->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
@@ -170,12 +177,7 @@ void Player::Attack()
 			BulletMgr::GetInstance()->RegisterBullet(bullet1);
 			BulletMgr::GetInstance()->Initialize();
 
-			auto bullet2 = new Torpedo();
-			bullet2->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
-			bullet2->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
-
-			BulletMgr::GetInstance()->RegisterBullet(bullet2);
-			BulletMgr::GetInstance()->Initialize();
+		
 		}
 
 	}
