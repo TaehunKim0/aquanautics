@@ -1,5 +1,6 @@
-#include"stdafx.h"
-#include"EnemyBullet.h"
+#include "stdafx.h"
+#include "EnemyBullet.h"
+
 
 EnemyBullet::EnemyBullet()
 {
@@ -7,22 +8,21 @@ EnemyBullet::EnemyBullet()
 
 EnemyBullet::EnemyBullet(std::wstring text)
 {
-	tex = text;
-
+	Name = "enemybullet";
 	bullet = new Sprite();
-
+	this->tex = text;
 }
+
 
 EnemyBullet::~EnemyBullet()
 {
+
 }
 
 bool EnemyBullet::Initialize()
 {
 	bullet->Initialize(tex);
 	AddChild(bullet);
-
-	m_collision = new Collision(bullet->Center, 30, this);
 
 	return false;
 }
@@ -41,7 +41,10 @@ void EnemyBullet::Render()
 
 void EnemyBullet::IsCollisionWith(Collision * other)
 {
-	if (!(other->Parent->Name == "enemybullet"))
+	if (other->Parent->Name == "enemybullet")
+		return;
+
+	if (other)
 		visible = false;
 
 }
