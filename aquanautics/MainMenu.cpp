@@ -10,6 +10,11 @@ MainMenu::MainMenu() : menuIndex(0)
 MainMenu::~MainMenu()
 {
 	printf("Menu Release\n");
+	SAFE_RELEASE(menu);
+	SAFE_RELEASE(howtoplay);
+	SAFE_RELEASE(ranking);
+	SAFE_RELEASE(introduce);
+	SAFE_RELEASE(credit);
 }
 
 bool MainMenu::Initialize()

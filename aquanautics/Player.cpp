@@ -25,7 +25,7 @@ bool Player::Initialize()
 	player->AutoNext = false;
 	player->SetCurrentFrame(0);
 
-	m_collision = new Collision(this->player->Center, 150, this);
+	m_collision = new Collision(this->player->Center, 100, this);
 
 	//
 	life = new AnimationSprite(4, 10);
@@ -119,7 +119,6 @@ void Player::Update(float deltaTime)
 
 	}
 
-	
 }
 
 void Player::Render()
@@ -163,14 +162,14 @@ void Player::Attack()
 			BulletMgr::GetInstance()->RegisterBullet(bullet2);
 			BulletMgr::GetInstance()->Initialize();
 
-			auto bullet = new TripleBullet(30.0f);
+			auto bullet = new TripleBullet(15.0f);
 			bullet->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
 			bullet->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
 
 			BulletMgr::GetInstance()->RegisterBullet(bullet);
 			BulletMgr::GetInstance()->Initialize();
 
-			auto bullet1 = new TripleBullet(-30.0f);
+			auto bullet1 = new TripleBullet(-15.0f);
 			bullet1->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
 			bullet1->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
 

@@ -6,7 +6,6 @@ ProgressRate::ProgressRate() : middleBoss(0) ,lastBoss(0)
 {
 }
 
-
 ProgressRate::~ProgressRate()
 {
 
@@ -26,22 +25,29 @@ void ProgressRate::Update(float deltaTime)
 {
 	Object::Update(deltaTime);
 
-
-	if (!(middleBoss | lastBoss))
-	{
-		if (GameTime::TotalFrame % 10 == 0)
-			progress->Position.x += 1;
-	}
+	if (middleBoss == 0)
+		{
+			if (GameTime::TotalFrame % 10 == 0)
+				progress->Position.x += 20;
+		}
 	
 	if (progress->Position.x == 610)
+	{
 		middleBoss = 1;
+		progress->Position.x++;
+	}
 
 	if (progress->Position.x == 965)
-		lastBoss = 1;
+	{
+		/*lastBoss = 1;
+		progress->Position.x++;*/
+	}
 
 	//중간 610
 	//최종 965
 
+	printf("Progress x %f \n", progress->Position.x);
+	printf("Middle boss %d\n", middleBoss);
 }
 
 bool ProgressRate::Initialize()

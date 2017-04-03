@@ -2,11 +2,12 @@
 #include "Stage1.h"
 #include"Urak.h"
 #include"MainMenu.h"
-
-Stage1::Stage1() : CanSpawn(1)
+#include"Shark.h"
+Stage1::Stage1() : CanSpawn(1) 
 {
 	printf("Stage 1 \n");
 	GameTime::TotalFrame = 0;
+	IsShark = 0;
 }
 
 Stage1::~Stage1()
@@ -31,7 +32,7 @@ bool Stage1::Initialize()
 	
 	AddChild(progress);
 
-
+	CanSpawn = 1;
 	//AddChild(label);
 
 	Scene::Initialize();
@@ -78,16 +79,14 @@ void Stage1::Update(float deltaTime)
 				y = 530;
 				break;
 			}
-			
-			//printf("y: %d\n", y);
-
 			EnemySpawner::GetInstance()->SpawnEnemy(1300, y);
-
 		}
 		
-
-
-
+	if (Input::IsKeyDown(VK_TAB))
+	{
+		Director::GetInstance()->LoadScene(new MainMenu());
+		return;
+	}
 
 	if (progress->middleBoss)
 	{
@@ -97,8 +96,18 @@ void Stage1::Update(float deltaTime)
 			EnemySpawner::GetInstance()->SpawnShark(1000, 250);
 		a = 1;
 
-		CanSpawn = 0;
+		IsShark = 1;
 	}
+
+	if (CanSpawn == 0)
+	{
+		if (EnemySpawner::GetInstance()->shark->lifeCount < 0)
+		{
+			CanSpawn = 1;
+			progress->middleBoss = 0;
+		}
+	}
+		
 
 	if (progress->lastBoss)
 	{

@@ -6,6 +6,8 @@ BulletMgr::BulletMgr()
 {
 	printf("BulletMgr »ý¼º\n");
 	bulletList.reserve(100);
+
+	Name = "BulletMgr";
 }
 
 BulletMgr::~BulletMgr()
@@ -22,16 +24,24 @@ bool BulletMgr::Initialize()
 
 void BulletMgr::Update(float deltaTime)
 {
-	for (auto b : bulletList)
+	std::vector<Bullet*>::iterator iter;
+
+	iter = bulletList.begin();
+
+  	for (; iter != bulletList.end();)
 	{
+ 		if (!((*iter)->visible))
+		{
+			iter = bulletList.erase(iter);
+			continue;
+		}
+
+		++iter;
+	}
+
+	for (auto b : bulletList)
 		b->Update(deltaTime);
 
-		if (b->LifeTime == b->deathTime)
-		{
-			std::vector<Bullet*>::iterator iter = std::find(bulletList.begin(), bulletList.end(), b);
-			bulletList.erase(iter);
-		}
-	}
 }
 
 void BulletMgr::Render()

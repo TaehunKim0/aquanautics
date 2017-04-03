@@ -17,7 +17,8 @@ Eel::~Eel()
 bool Eel::Initialize()
 {
 	eel = new Sprite();
-	
+	eel->Initialize(L"Resources/Mob/eel.png");
+
 	m_collision = new Collision(eel->Center, 30, this);
 	AddChild(eel);
 

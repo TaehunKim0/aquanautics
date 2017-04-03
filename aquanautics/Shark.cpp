@@ -26,6 +26,7 @@ bool Shark::Initialize()
 	r = 0;
 
 	srand(time(NULL));
+
 }
 
 void Shark::Render()
@@ -40,7 +41,11 @@ void Shark::Update(float deltaTime)
 	m_collision->SetPostion(Position.x, Position.y);
 
 	if (lifeCount < 0)
+	{
 		visible = false;
+		
+		
+	}
 
 	if (!IsAppear)
 		if ((Position.x > 700))

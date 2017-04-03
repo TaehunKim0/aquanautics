@@ -38,6 +38,9 @@ void TripleBullet::Update(float deltaTime)
 	Position.x += 10 * cos(radius);
 	Position.y += 10 * sin(radius);
 
+	if (Position.x > 1300)
+		visible = 0;
+
 }
 
 void TripleBullet::Render()
@@ -49,6 +52,23 @@ void TripleBullet::IsCollisionWith(Collision * other)
 {
 	if ((other->Parent->Name =="player"))
 	{
-		bullet->visible = false;
+	}
+
+	if (other->Parent->Name == "torpedo")
+	{
+		printf("triple bullet - torpedo Collision\n");
+		return;
+	}
+
+	if (other->Parent->Name == "triplebullet")
+	{
+		printf("triple bullet - triple torpedo Collision\n");
+		return;
+	}
+
+	if (other->Parent->Name == "urak")
+	{
+		printf("triple bullet - urak Collision\n");
+		visible = false;
 	}
 }

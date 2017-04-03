@@ -26,7 +26,6 @@ Torpedo::~Torpedo()
 
 bool Torpedo::Initialize()
 {
-
 	if (bullet == nullptr)
 	{
 		bullet = new Sprite();
@@ -58,8 +57,10 @@ bool Torpedo::Initialize()
 
 void Torpedo::Update(float deltaTime)
 {
-	LifeTime++;
 	Position.x += 10;
+
+	if (Position.x > 1300)
+		visible = 0;
 
 	m_collision->SetPostion(Position.x, Position.y);
 
@@ -79,6 +80,7 @@ void Torpedo::IsCollisionWith(Collision * other)
 	if ((other->Parent->Name == "player"))
 	{
 		printf("Bullet - Player Collsion\n");
+		return;
 	}
 
 	if ((other->Parent->id == 1))
@@ -86,25 +88,30 @@ void Torpedo::IsCollisionWith(Collision * other)
 		visible = true;
 
 		printf("Bullet - Item Collsion\n");
+		return;
 	}
 
 	if ((other->Parent->Name == "torpedo"))
 	{
 		visible = true;
 		printf("Bullet - Bullet Collision\n");
+		return;
 	}
 
 	if((other->Parent->Name == "triplebullet"))
 	{
 		visible = true;
 		printf("Bullet - triplebullet Collision\n");
+		return;
 	}
 
 	if ((other->Parent->Name == "addonplayer"))
 	{
 		printf("asd");
 	}
-		
+
+	if (other)
+		visible = false;
 }
 
 void Torpedo::SetTorpedoTexture(std::wstring texture)

@@ -1,11 +1,18 @@
 #pragma once
+class Shark;
+
 class EnemySpawner : public Object , public SingleTon<EnemySpawner>
 {
 private:
 	std::vector<Object*>enemyList;
 
+	
+
+	bool IsShark;
+	bool IsHydra;
 
 public:
+	Shark* shark;
 	EnemySpawner();
 	~EnemySpawner();
 

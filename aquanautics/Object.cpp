@@ -1,17 +1,19 @@
 #include"stdafx.h"
 #include "Object.h"
 
-
 Object::Object(std::string name) : Name(name), Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f) ,visible(1) ,id(0)
 {
-	//printf("Object %s 积己凳\n", Name.c_str());
-}
+	//printf("Object %s 积己凳\n", Name.c_str());+		[allocator]	allocator	std::_Compressed_pair<std::_Wrap_alloc<std::allocator<Object *> >,std::_Vector_val<std::_Simple_types<Object *> >,1>
 
+}
 
 Object::~Object()
 {
 	for each(auto child in Children)
-		SAFE_DELETE(child);
+	{
+		if(child)
+			SAFE_DELETE(child);
+	}
 
 	Children.clear();
 
@@ -39,7 +41,6 @@ void Object::Release()
 		child->Release();
 
 	printf("Object %s 副府令凳\n", Name.c_str());
-
 }
 
 void Object::Update(float deltaTime)

@@ -22,43 +22,36 @@ bool CollisionMgr::Initialize()
 
 void CollisionMgr::Update(float deltaTime)
 {
-	for(auto a : collisionList)
+	std::vector<Collision*>::iterator iter;
+
+	iter = collisionList.begin();
+	while (iter != collisionList.end())
+	{
+		if (((*iter)->Parent->visible) == false)
+		{
+			iter = collisionList.erase(iter);
+			continue;
+		}
+
+		++iter;
+	}
+
+	for (auto a : collisionList)
 		for (auto b : collisionList)
 		{
 			if (a != b)
 			{
 				//printf("A Name : %s \n", a->Parent->Name.c_str());
 				//printf("B Name : %s \n", b->Parent->Name.c_str());
-				if (!(a->Parent->visible == false))
+				if (CircleCollide(a, b))
 				{
-					if (!(b->Parent->visible == false))
-						if (CircleCollide(a, b))
-						{
-							a->IsCollide(b);
-							b->IsCollide(a);
-						}
+					a->IsCollide(b);
+					b->IsCollide(a);
 				}
-		
 			}
 		}
 
-	/*for (auto a : collisionList)
-	{
-		if (a == false)
-			continue;
 
-		printf("Collision : %s\n", a->Parent->Name.c_str());
-		if (a->Parent->visible == false)
-		{
-			std::vector<Collision*>::iterator iter = std::find(collisionList.begin(), collisionList.end(), a);
-			printf("충돌체 : %s 삭제\n", a->Parent->Name.c_str());
-			collisionList.erase(iter);
-		}
-
-		else
-			printf("else\n");
-	}
-	*/
 
 	Object::Update(deltaTime);
 }
@@ -101,3 +94,20 @@ bool CollisionMgr::CircleCollide(Collision * a, Collision * b)
 
 	return false;
 }
+//for (auto a : collisionList)// 1 2 3
+//{
+//	if (a == false)
+//		continue;
+
+//	printf("Collision : %s\n", a->Parent->Name.c_str());
+//	if (a->Parent->visible == false)
+//	{
+//		std::vector<Collision*>::iterator iter = std::find(collisionList.begin(), collisionList.end(), a);
+//		printf("충돌체 : %s 삭제\n", a->Parent->Name.c_str());
+//		collisionList.erase(iter);
+//	}
+
+//	else
+//		printf("else\n");
+//}
+//

@@ -15,5 +15,10 @@ public:
 	void Render();
 	void Update(float deltaTime);
 	bool Initialize();
+
+	void Get(bool a)
+	{
+		middleBoss = 0;
+	}
 };
 

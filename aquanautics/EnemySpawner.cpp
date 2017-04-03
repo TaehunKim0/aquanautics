@@ -5,7 +5,7 @@
 #include"Shark.h"
 #include"Kraken.h"
 
-EnemySpawner::EnemySpawner()
+EnemySpawner::EnemySpawner() : IsHydra(0) ,IsShark(0)
 {
 }
 
@@ -59,10 +59,10 @@ void EnemySpawner::SpawnEnemy(int x, int y)
 
 	case 2:
 	{
-		auto e = new Eel();
+	/*	auto e = new Eel();
 		e->Initialize();
 		enemyList.push_back(e);
-		e->SetPostion(x, y);
+		e->SetPostion(x, y);*/
 	}
 	break;
 
@@ -77,12 +77,12 @@ void EnemySpawner::SpawnEnemy(int x, int y)
 
 void EnemySpawner::SpawnShark(int x, int y)
 {
-	auto sh = new Shark();
-	sh->Initialize();
+	shark = new Shark();
+	shark->Initialize();
 
-	enemyList.push_back(sh);
+	enemyList.push_back(shark);
 
-	sh->SetPostion(x, y);
+	shark->SetPostion(x, y);
 }
 
 void EnemySpawner::SpawnKraken(int x, int y)
