@@ -20,6 +20,8 @@ bool Eel::Initialize()
 	eel->Initialize(L"Resources/Mob/eel.png");
 
 	m_collision = new Collision(eel->Center, 30, this);
+	AddChild(m_collision);
+
 	AddChild(eel);
 
 	return false;
@@ -31,19 +33,20 @@ void Eel::Update(float deltaTime)
 
 	if (lifeCount <= 0)
 	{
-		visible = false;
-		if (!visible)
-			return;
-
 		auto i = new Item(Position.x, Position.y);
 		i->Initialize();
 
+		EnemySpawner::GetInstance()->Remove(this);
+		CollisionMgr::GetInstance()->Remove(m_collision);
 	}
 
 	Position.x -= 3;
 
 	if (Position.x < 0)
-		visible = false;
+	{
+		EnemySpawner::GetInstance()->Remove(this);
+		CollisionMgr::GetInstance()->Remove(m_collision);
+	}
 
 	if (GameTime::TotalFrame % 120 == 0)
 		Attack();
@@ -67,10 +70,11 @@ void Eel::IsCollisionWith(Collision * other)
 void Eel::Attack()
 {
 	auto bullet = new EnemyBullet(L"Resources/Mob/eelbullet.png");
+	bullet->Initialize();
 
 	bullet->Position.x += (this->Position.x);
 	bullet->Position.y += (this->Position.y);
 
-	BulletMgr::GetInstance()->RegisterBullet(bullet);
-	BulletMgr::GetInstance()->Initialize();
+	AddChild(bullet);
+
 }

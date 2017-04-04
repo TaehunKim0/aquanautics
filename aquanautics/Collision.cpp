@@ -40,4 +40,3 @@ void Collision::IsCollide(Collision * other)
 	Parent->IsCollisionWith(other);
 }
 
-

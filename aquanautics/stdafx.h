@@ -24,6 +24,7 @@
 #include<d3d9.h>
 #include<d3dx9.h>
 #include<assert.h>
+#include<queue>
 
 #include<unordered_map>
 #include<vector>

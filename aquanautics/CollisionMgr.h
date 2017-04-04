@@ -2,7 +2,7 @@
 class CollisionMgr : public Object , public SingleTon<CollisionMgr>
 {
 private:
-	std::vector<Collision*> collisionList;
+	std::vector<Collision*> CollisionList;
 
 public:
 	CollisionMgr();
@@ -15,5 +15,6 @@ public:
 	void RegisterCollision(Collision* collision);
 
 	bool CircleCollide(Collision* a, Collision* b);
-	
+
+	void Remove(Collision* collision);
 };

@@ -5,52 +5,44 @@
 BulletMgr::BulletMgr()
 {
 	printf("BulletMgr »ý¼º\n");
-	bulletList.reserve(100);
 
 	Name = "BulletMgr";
 }
 
 BulletMgr::~BulletMgr()
 {
+	for (auto a : Children)
+		if (a)
+		{
+			a->Release();
+			delete a;
+		}
 }
 
 bool BulletMgr::Initialize()
 {
-	for (auto b : bulletList)
-		b->Initialize();
+	for each(auto child in Children)
+		child->Initialize();
 
 	return false;
 }
 
 void BulletMgr::Update(float deltaTime)
 {
-	std::vector<Bullet*>::iterator iter;
-
-	iter = bulletList.begin();
-
-  	for (; iter != bulletList.end();)
-	{
- 		if (!((*iter)->visible))
-		{
-			iter = bulletList.erase(iter);
-			continue;
-		}
-
-		++iter;
-	}
-
-	for (auto b : bulletList)
-		b->Update(deltaTime);
-
+	Object::Update(deltaTime);
 }
 
 void BulletMgr::Render()
 {
-	for (auto b : bulletList)
-		b->Render();
+	Object::Render();
 }
 
 void BulletMgr::RegisterBullet(Bullet * b)
 {
-	bulletList.push_back(b);
+	AddChild(b);
+}
+
+void BulletMgr::Remove(Bullet * bullet)
+{
+	bullet->Destroy();
 }

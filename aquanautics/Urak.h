@@ -3,7 +3,7 @@ class Urak : public Object
 {
 private:
 	Sprite* urak;
-	Collision* m_collision;
+	//Collision* m_collision;
 
 	int speed;
 	int lifeCount;

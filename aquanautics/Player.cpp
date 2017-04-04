@@ -26,7 +26,7 @@ bool Player::Initialize()
 	player->SetCurrentFrame(0);
 
 	m_collision = new Collision(this->player->Center, 100, this);
-
+	AddChild(m_collision);
 	//
 	life = new AnimationSprite(4, 10);
 	life->AddFrame(Sprite::Create(L"Resources/UI/Life/1.png"));
@@ -74,7 +74,7 @@ void Player::Update(float deltaTime)
 	nuclear->Update(deltaTime);
 
 
-	Object::Update(deltaTime);
+	Object::Update(deltaTime);	
 	m_collision->SetPostion(Position.x, Position.y);
 
 	Move();
@@ -141,42 +141,42 @@ void Player::Release()
 
 void Player::Attack()
 {
-	if (Input::IsKeyDown(VK_SPACE) && GameTime::CurrentFrame % 10 == 0)
+	if (Input::IsKeyDown(VK_SPACE) && GameTime::CurrentFrame % 20 == 0)
 	{
 		if (weapon->GetWeaponType() == WeaponType::torpedo)
 		{
 			auto bullet0 = new Torpedo();
+			bullet0->Initialize();
+			bullet0->UseParentMatrix = false;
 			bullet0->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
 			bullet0->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
-
-			BulletMgr::GetInstance()->RegisterBullet(bullet0);
-			BulletMgr::GetInstance()->Initialize();
+	
+			AddChild(bullet0);
 		}
 	
 		if (weapon->GetWeaponType() == WeaponType::tripletorpedo)
 		{
 			auto bullet2 = new Torpedo();
+			bullet2->Initialize();
+			bullet2->UseParentMatrix = false;
 			bullet2->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
 			bullet2->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
+			AddChild(bullet2);
 
-			BulletMgr::GetInstance()->RegisterBullet(bullet2);
-			BulletMgr::GetInstance()->Initialize();
-
-			auto bullet = new TripleBullet(15.0f);
+			auto bullet = new TripleBullet(60.0f);
+			bullet->Initialize();
+			bullet->UseParentMatrix = false;
 			bullet->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
 			bullet->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
+			AddChild(bullet);
 
-			BulletMgr::GetInstance()->RegisterBullet(bullet);
-			BulletMgr::GetInstance()->Initialize();
-
-			auto bullet1 = new TripleBullet(-15.0f);
+			auto bullet1 = new TripleBullet(-60.0f);
+			bullet1->Initialize();
+			bullet1->UseParentMatrix = false;
 			bullet1->Position.x += (this->Position.x) + (player->GetCurrentFrame()->Texture->Size.x / 2) + 55;
 			bullet1->Position.y += (this->Position.y) + (player->GetCurrentFrame()->Texture->Size.y / 2) + 29;
 
-			BulletMgr::GetInstance()->RegisterBullet(bullet1);
-			BulletMgr::GetInstance()->Initialize();
-
-		
+			AddChild(bullet1);
 		}
 
 	}

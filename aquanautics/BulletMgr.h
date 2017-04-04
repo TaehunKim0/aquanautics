@@ -4,8 +4,6 @@ class BulletMgr : public SingleTon<BulletMgr> , public Object
 {
 private:
 
-	std::vector<Bullet*> bulletList;
-
 public:
 	BulletMgr();
 	~BulletMgr();
@@ -15,5 +13,6 @@ public:
 	void Render();
 
 	void RegisterBullet(Bullet* b);
+	void Remove(Bullet* bullet);
 };
 

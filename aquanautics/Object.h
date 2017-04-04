@@ -5,7 +5,7 @@ class Object
 public:
 	Object* Parent;
 	std::vector<Object*> Children;
-
+	std::queue<Object*> DestroyList;
 	std::string Name;
 
 	D3DXVECTOR2 Position;
@@ -16,8 +16,12 @@ public:
 	bool visible;
 
 	int id;
+	bool UseParentMatrix;
+
+	Collision* m_collision;
+
 public:
-	Object(std::string name = "");
+	Object();
 	~Object();
 
 	void SetPostion(int x, int y);
@@ -30,7 +34,13 @@ public:
 
 	virtual void Render();
 
-	virtual void IsCollisionWith(Collision* collision);
+	virtual void IsCollisionWith(Object* collision);
+
+	virtual void Destroy()
+	{
+		if (Parent)
+			Parent->DestroyList.push(this);
+	}
 
 public:
 	void AddChild(Object* child);
@@ -38,6 +48,6 @@ public:
 	bool GetVisisble() { return visible; }
 	void SetVisible(bool visible) { this->visible = visible; }
 
-	void RemoveChild(Object* child);
+	void RemoveChild(Object* child, bool memorydelete);
 };
 

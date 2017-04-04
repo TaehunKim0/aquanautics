@@ -60,13 +60,20 @@ void Torpedo::Update(float deltaTime)
 	Position.x += 10;
 
 	if (Position.x > 1300)
-		visible = 0;
+	{
+		CollisionMgr::GetInstance()->Remove(m_collision);
+		BulletMgr::GetInstance()->Remove(this);
+	}
+		
 
 	m_collision->SetPostion(Position.x, Position.y);
 
 	if (LifeTime == deathTime)
-		this->SetVisible(false);
-
+	{
+		CollisionMgr::GetInstance()->Remove(m_collision);
+		BulletMgr::GetInstance()->Remove(this);
+	}
+	
 	Object::Update(deltaTime);
 }
 

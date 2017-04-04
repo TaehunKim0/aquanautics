@@ -18,27 +18,17 @@ bool EnemySpawner::Initialize()
 {
 	Object::Initialize();
 
-	for (auto a : enemyList)
-		a->Initialize();
-
 	return true;
 }
 
 void EnemySpawner::Update(float deltaTime)
 {
 	Object::Update(deltaTime);
-
-	for (auto a : enemyList)
-		a->Update(deltaTime);
-
 }
 
 void EnemySpawner::Render()
 {
 	Object::Render();
-
-	for (auto a : enemyList)
-		a->Render();
 }
 
 void EnemySpawner::SpawnEnemy(int x, int y)
@@ -52,17 +42,17 @@ void EnemySpawner::SpawnEnemy(int x, int y)
 	{
 		auto e = new Urak();
 		e->Initialize();
-		enemyList.push_back(e);
+		AddChild(e);
 		e->SetPostion(x, y);
 	}
 	break;
 
 	case 2:
 	{
-	/*	auto e = new Eel();
+		auto e = new Eel();
 		e->Initialize();
-		enemyList.push_back(e);
-		e->SetPostion(x, y);*/
+		AddChild(e);
+		e->SetPostion(x, y);
 	}
 	break;
 
@@ -70,9 +60,6 @@ void EnemySpawner::SpawnEnemy(int x, int y)
 		printf("Spawner Default\n");
 		break;
 	}
-
-	
-	
 }
 
 void EnemySpawner::SpawnShark(int x, int y)
@@ -80,11 +67,22 @@ void EnemySpawner::SpawnShark(int x, int y)
 	shark = new Shark();
 	shark->Initialize();
 
-	enemyList.push_back(shark);
+	AddChild(shark);
 
 	shark->SetPostion(x, y);
 }
 
 void EnemySpawner::SpawnKraken(int x, int y)
 {
+}
+
+void EnemySpawner::Remove(Object * child)
+{
+	//auto iter = std::find(Children.begin(), Children.end(), child);
+
+	//if (iter == Children.end())
+	//	return;
+
+	//Children.erase(iter);
+	child->Destroy();
 }

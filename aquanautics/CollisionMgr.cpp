@@ -1,18 +1,24 @@
 #include "stdafx.h"
 #include "CollisionMgr.h"
+#include"Collision.h"
 
 
 CollisionMgr::CollisionMgr()
 {
-	collisionList.reserve(10);
 	printf("CollisionMgr »ý¼º \n");
-
-	collisionList.clear();
+	CollisionList.reserve(20);
+	
 }
 
 
 CollisionMgr::~CollisionMgr()
 {
+	for (auto a : Children)
+		if (a)
+		{
+			a->Release();
+			delete a;
+		}
 }
 
 bool CollisionMgr::Initialize()
@@ -22,38 +28,20 @@ bool CollisionMgr::Initialize()
 
 void CollisionMgr::Update(float deltaTime)
 {
-	std::vector<Collision*>::iterator iter;
+	Object::Update(deltaTime);
 
-	iter = collisionList.begin();
-	while (iter != collisionList.end())
-	{
-		if (((*iter)->Parent->visible) == false)
-		{
-			iter = collisionList.erase(iter);
-			continue;
-		}
-
-		++iter;
-	}
-
-	for (auto a : collisionList)
-		for (auto b : collisionList)
+	for(auto a: CollisionList)
+		for(auto b : CollisionList)
 		{
 			if (a != b)
 			{
-				//printf("A Name : %s \n", a->Parent->Name.c_str());
-				//printf("B Name : %s \n", b->Parent->Name.c_str());
-				if (CircleCollide(a, b))
-				{
-					a->IsCollide(b);
-					b->IsCollide(a);
-				}
+				//if (CircleCollide(a, b))
+				//{
+				//	a->IsCollide(b);
+				//	b->IsCollide(a);
+				//}
 			}
 		}
-
-
-
-	Object::Update(deltaTime);
 }
 
 void CollisionMgr::Render()
@@ -62,10 +50,10 @@ void CollisionMgr::Render()
 
 void CollisionMgr::RegisterCollision(Collision * collision)
 {
-	collisionList.push_back(collision);
+	CollisionList.push_back(collision);
 }
 
-bool CollisionMgr::CircleCollide(Collision * a, Collision * b)
+bool CollisionMgr::CircleCollide(Collision * a, Collision* b)
 {
 	float ax = a->Parent->Position.x;
 	float ay = a->Parent->Position.y;
@@ -79,10 +67,10 @@ bool CollisionMgr::CircleCollide(Collision * a, Collision * b)
 	//printf("bx : %f\n", bx);
 	//printf("by : %f\n", by);
 
-	if (a->Parent->Name == "urak")
+	if (a->Parent->Name == "eel")
 	{
-	//	printf("Name : %s , X : %f, Y : %f\n", a->Parent->Name.c_str(), ax, ay);
-	//	printf("Name : %s , X : %f, Y : %f\n", b->Parent->Name.c_str(), ax, ay);
+		//printf("Name : %s , X : %f, Y : %f\n", a->Parent->Name.c_str(), ax, ay);
+		//printf("Name : %s , X : %f, Y : %f\n", b->Parent->Name.c_str(), ax, ay);
 	}
 
 	float ftemp = sqrt(pow(ax - bx, 2) + pow(ay - by, 2));
@@ -94,6 +82,16 @@ bool CollisionMgr::CircleCollide(Collision * a, Collision * b)
 
 	return false;
 }
+
+void CollisionMgr::Remove(Collision * collision)
+{
+	auto iter = std::find(Children.begin(), Children.end(), collision);
+	if (iter == Children.end())
+		return;
+
+	Children.erase(iter);
+}
+
 //for (auto a : collisionList)// 1 2 3
 //{
 //	if (a == false)

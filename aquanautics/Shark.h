@@ -11,7 +11,7 @@ class Shark : public Object
 {
 public:
 	Sprite* shark;
-	Collision* m_collision;
+	//Collision* m_collision;
 
 	int lifeCount;
 	bool IsAppear;

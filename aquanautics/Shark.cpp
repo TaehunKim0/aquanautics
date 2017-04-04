@@ -18,6 +18,7 @@ bool Shark::Initialize()
 
 	m_collision = new Collision(shark->Center, 100, this);
 
+	AddChild(m_collision);
 	AddChild(shark);
 
 	sharkDirection = SharkDirection::Up;
@@ -43,8 +44,8 @@ void Shark::Update(float deltaTime)
 	if (lifeCount < 0)
 	{
 		visible = false;
-		
-		
+		EnemySpawner::GetInstance()->Remove(this);
+		CollisionMgr::GetInstance()->Remove(m_collision);
 	}
 
 	if (!IsAppear)

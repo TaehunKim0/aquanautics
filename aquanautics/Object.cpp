@@ -1,7 +1,7 @@
 #include"stdafx.h"
 #include "Object.h"
 
-Object::Object(std::string name) : Name(name), Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f) ,visible(1) ,id(0)
+Object::Object() : Parent(nullptr), Position(0.f, 0.f) , Rotation(0.f) ,visible(1) ,id(0) , UseParentMatrix(1)
 {
 	//printf("Object %s »ý¼ºµÊ\n", Name.c_str());+		[allocator]	allocator	std::_Compressed_pair<std::_Wrap_alloc<std::allocator<Object *> >,std::_Vector_val<std::_Simple_types<Object *> >,1>
 
@@ -51,7 +51,14 @@ void Object::Update(float deltaTime)
 	D3DXMatrixTransformation2D(&Matrix, NULL, 0.0f, NULL, NULL, Rotation, &Position);
 
 	if (Parent)
-		Matrix *= Parent->Matrix;
+		if(UseParentMatrix)
+			Matrix *= Parent->Matrix;
+
+	while (!DestroyList.empty())
+	{
+		RemoveChild(DestroyList.front() , true);
+		DestroyList.pop();
+	}
 
 	for each(auto child in Children)
 		child->Update(deltaTime);
@@ -67,7 +74,7 @@ void Object::Render()
 		child->Render();
 }
 
-void Object::IsCollisionWith(Collision * collision)
+void Object::IsCollisionWith(Object * collision)
 {
 }
 
@@ -77,16 +84,21 @@ void Object::AddChild(Object * child)
 	Children.push_back(child);
 }
 
-void Object::RemoveChild(Object* child)
+void Object::RemoveChild(Object* child , bool memorydelete)
 {
-	if (Children.empty())
-		return;
 
 	auto iterator = std::find(std::begin(Children), std::end(Children), child);
-	if (iterator != Children.end())
-	{
-		SAFE_DELETE(child);
+	if (iterator == Children.end())
+		return;
+		
+	Children.erase(iterator);
 
-		Children.erase(iterator);
+	if (memorydelete)
+	{
+		child->Release();
+		SAFE_DELETE(child);
+		return;
 	}
+
+	child->Parent = nullptr;
 }

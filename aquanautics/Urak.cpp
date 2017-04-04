@@ -16,43 +16,13 @@ bool Urak::Initialize()
 {
 	Name = "urak";
 
-	
-	int r = 0;
-	srand(time(NULL));
-	r = (rand() % 2 )+1;
-
-	switch (r)
-	{
-	case 1:
-	{
-		urak = new Sprite();
-		urak->Initialize(L"Resources/Mob/urak.png");
-	}
-		break;
-
-	case 2:
-	{
-		urak = new Sprite();
-		urak->Initialize(L"Resources/Mob/redurak.png");
-	}
-		break;
-
-	default:
-		printf("Urak Default\n");
-		break;
-	}
+	urak = new Sprite();
+	urak->Initialize(L"Resources/Mob/urak.png");
 
 	m_collision = new Collision(urak->Center, 20, this);
 
 	AddChild(urak);
-
-	//urak = new Sprite();
-	//urak->Initialize(L"Resources/Mob/urak.png");
-
-	//m_collision = new Collision(urak->Center, 70, this);
-	//
-
-	//AddChild(urak);
+	AddChild(m_collision);
 
 	return true;
 
@@ -64,7 +34,6 @@ void Urak::Update(float deltaTime)
 
 	m_collision->SetPostion(Position.x  + urak->Center.x, Position.y + urak->Center.y);
 
-
 	if (visible == true)
 	{
 		if (lifeCount < 0)
@@ -72,15 +41,15 @@ void Urak::Update(float deltaTime)
 			auto i = new Item(Position.x, Position.y);
 			i->Initialize();
 
-			visible = 0;
-			
+			EnemySpawner::GetInstance()->Remove(this);
+			CollisionMgr::GetInstance()->Remove(m_collision);
 		}
 	}
 
-	Position.x -= 3;
+	Position.x -= 10;
 
-	if (Position.x < 0)
-		visible = false;
+	if (Position.x < -250)
+		EnemySpawner::GetInstance()->Remove(this);
 
 }
 

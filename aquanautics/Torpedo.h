@@ -2,9 +2,9 @@
 class Bullet;
 class Torpedo : public Bullet
 {
-private:
+public:
 	Sprite* bullet;
-	Collision* m_collision;
+//	Collision* m_collision;
 
 	std::wstring tt;
 

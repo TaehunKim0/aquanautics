@@ -23,4 +23,6 @@ public:
 	void SpawnEnemy(int x, int y);
 	void SpawnShark(int x, int y);
 	void SpawnKraken(int x, int y);
+
+	void Remove(Object* child);
 };

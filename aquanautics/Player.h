@@ -7,7 +7,7 @@ class AddOnPlayer;
 class Director;
 class Player : public Object
 {
-private:
+public:
 	AnimationSprite* player;
 	AnimationSprite* life;
 	AnimationSprite* nuclear;
@@ -15,7 +15,7 @@ private:
 	int lifeCount;
 	float speed;
 
-	Collision * m_collision;
+	//Collision * m_collision;
 	Weapon* weapon;
 
 	int collisionTime;

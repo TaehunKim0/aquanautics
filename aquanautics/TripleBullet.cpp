@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "TripleBullet.h"
 #include"Bullet.h"
+#include"Torpedo.h"
 
 TripleBullet::TripleBullet()
 {
@@ -20,14 +21,13 @@ TripleBullet::TripleBullet(float radius) : radius(0)
 
 bool TripleBullet::Initialize()
 {
-	bullet = new Sprite();
-	bullet->Initialize(L"Resources/Player/p_torpedo.png");
-	AddChild(bullet);
-
-	m_collision = new Collision(bullet->Center, 30, this);
+	auto bullet = new Torpedo();
+	bullet->Initialize();
 
 	AddChild(bullet);
 
+	m_collision = new Collision(bullet->bullet->Center, 30, this);
+	AddChild(m_collision);
 	return false;
 }
 
@@ -35,11 +35,14 @@ void TripleBullet::Update(float deltaTime)
 {
 	Object::Update(deltaTime);
 
-	Position.x += 10 * cos(radius);
-	Position.y += 10 * sin(radius);
+	Position.x += cos(radius);
+	Position.y += sin(radius);
 
 	if (Position.x > 1300)
-		visible = 0;
+	{ 
+		BulletMgr::GetInstance()->Remove(this);
+		CollisionMgr::GetInstance()->Remove(m_collision);
+	}
 
 }
 

@@ -28,7 +28,7 @@ void ProgressRate::Update(float deltaTime)
 	if (middleBoss == 0)
 		{
 			if (GameTime::TotalFrame % 10 == 0)
-				progress->Position.x += 20;
+				progress->Position.x += 1;
 		}
 	
 	if (progress->Position.x == 610)
@@ -46,8 +46,7 @@ void ProgressRate::Update(float deltaTime)
 	//중간 610
 	//최종 965
 
-	printf("Progress x %f \n", progress->Position.x);
-	printf("Middle boss %d\n", middleBoss);
+
 }
 
 bool ProgressRate::Initialize()

@@ -4,7 +4,7 @@ class TripleBullet :  public Bullet
 {
 private:
 	Sprite* bullet;
-	Collision* m_collision;
+	//Collision* m_collision;
 
 public:
 	TripleBullet();
